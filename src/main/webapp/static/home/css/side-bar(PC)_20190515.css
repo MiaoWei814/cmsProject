@@ -1,0 +1,103 @@
+/* side-bar module for "itsource.cn"(PC) START */
+/* @version 20190515 */
+
+#side-bar {
+    position: fixed;
+    left: 18px;
+    top: 0;
+    width: 0;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    z-index: 1
+}
+#side-bar * {
+    background-size: contain;
+}
+#side-bar .content {
+    position: relative;
+}
+#side-bar .content,
+#side-bar .links {
+    flex-direction: column;
+}
+#side-bar .logo {
+    width: 64px;
+    height: 58px;
+    margin-bottom: -10px;
+    position: relative;
+}
+#side-bar .links {
+    width: 74px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 0px rgba(124,124,123,0.5);
+}
+#side-bar .wrapper {
+    width: inherit;
+    height: 60px;
+    padding: 2px;
+    background-color: #fff;
+}
+#side-bar .wrapper .icon {
+    height: 40px;
+}
+#side-bar .wrapper .text {
+    font-size: 12px;
+}
+#side-bar .wrapper:hover {
+    background-color:#FFBB18;
+    color: #fff;
+}
+#side-bar .splitter {
+    width: inherit;
+    height: 1px;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f0+10,d6d4d3+25,c7c4c3+33,b3afae+50,c7c4c3+67,d6d4d3+75,f1f1f0+90,ffffff+100 */
+    background: -moz-linear-gradient(left, #ffffff 0%, #f1f1f0 10%, #d6d4d3 25%, #c7c4c3 33%, #b3afae 50%, #c7c4c3 67%, #d6d4d3 75%, #f1f1f0 90%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffffff 0%,#f1f1f0 10%,#d6d4d3 25%,#c7c4c3 33%,#b3afae 50%,#c7c4c3 67%,#d6d4d3 75%,#f1f1f0 90%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffffff 0%,#f1f1f0 10%,#d6d4d3 25%,#c7c4c3 33%,#b3afae 50%,#c7c4c3 67%,#d6d4d3 75%,#f1f1f0 90%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#side-bar .more {
+   cursor: pointer;
+}
+
+#side-bar_more {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    padding-left: 5px;
+    flex-direction: column;
+    align-items: center;
+}
+#side-bar_more::before {
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    box-shadow: -3px -3px 4px -3px rgba(124,124,123,0.5);
+    border-top: solid 5px #fff;
+    border-right: solid 5px transparent;
+    border-bottom: solid 5px transparent;
+    border-left: solid 5px #fff;
+    transform: rotate(-45deg);
+}
+#side-bar_more.deactivated {
+    display: none;
+}
+#side-bar_more .links {
+    width: 100px;
+    flex-direction: column;
+}
+#side-bar_more .wrapper {
+    height: auto;
+    font-size: 12px;
+    padding: 0.5em;
+}
+
+/* side-bar module for "itsource.cn"(PC) END */

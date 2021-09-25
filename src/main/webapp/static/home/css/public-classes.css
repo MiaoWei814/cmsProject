@@ -1,0 +1,278 @@
+.center.frame {
+  letter-spacing: 0;
+  text-indent: 0;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+#public-classes .title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+#public-classes .contents {
+  background-color: #fff;
+  overflow: hidden;
+  margin-top: 20px;
+  padding: 0 30px;
+}
+#public-classes [tabs-keel=categories] {
+  text-align: left;
+  font-size: 14px;
+  margin: 20px 0;
+}
+#public-classes [tabs-keel=categories] >* {
+  line-height: 24px;
+  padding: 0 0.5em;
+  border-radius: 2px;
+}
+#public-classes [tabs-keel=categories] >.tab.active {
+  background-color: #2d2f3b;
+  color: #fff;
+}
+#public-classes .filters {
+  position: relative;
+  justify-content: flex-start;
+}
+#public-classes .filter {
+  height: 14px;
+  line-height: 14px;
+  font-size: 14px;
+  align-content: flex-start;
+  align-items: flex-start;
+  margin-right: 50px;
+  cursor: pointer;
+}
+#public-classes .filter .select {
+  flex-direction: column;
+  align-items: stretch;
+}
+#public-classes .filter .select .selected {
+  justify-content: space-around;
+}
+#public-classes .filter .select .selected .down {
+  color: #ffb700;
+  transform: scaleY(0.6);
+  transition: all .33s ease;
+}
+#public-classes .filter.closed .select .selected .down {
+  color: currentColor;
+}
+#public-classes .filter .candidates {
+  flex-direction: column;
+  background-color: #545454;
+  padding: 8px 12px;
+  border-radius: 2px;
+  position: relative;
+  top: 10px;
+  transition: all .33s linear;
+}
+#public-classes .filter .candidates::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 12px;
+  border-right: solid 4px transparent;
+  border-bottom: solid 6px #545454;
+  border-left: solid 4px transparent;
+  transition: border-bottom-width .33s linear;
+}
+#public-classes .filter.closed .candidates {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#public-classes .filter.closed .candidates::before {
+  border-bottom-width: 0;
+  transition-delay: .33s;
+}
+#public-classes .filter .candidate {
+  line-height: 30px;
+  color: #fff;
+  overflow: hidden;
+  transition: line-height .33s linear;
+}
+#public-classes .filter.closed .candidate {
+  line-height: 0px;
+}
+#public-classes .filter:not(.closed) .candidate {
+  transition-delay: .33s;
+}
+#public-classes .filter .candidate:hover,
+#public-classes .filter .candidate.active {
+  color: #ffb700;
+}
+
+#public-classes .content {
+  justify-content: space-between;
+}
+#public-classes .wrapper {
+  width: 270px;
+  height: 270px;
+  margin-bottom: 30px;
+  font-size: 12px;
+  text-align: justify;
+  overflow: hidden;
+}
+#public-classes .wrapper:hover {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.28)
+}
+#public-classes .wrapper .picture {
+  height: 180px;
+  background-size: cover;
+}
+#public-classes .wrapper .text-wrapper {
+  font-size: 16px;
+  padding: 10px 5px;
+  background-color: rgba(255,255,255,0.95);
+  transition: inherit;
+}
+#public-classes .wrapper:hover .text-wrapper {
+  margin-top: -55px;
+}
+#public-classes .wrapper .text-wrapper .sectitle-bar {
+  line-height: 24px;
+  flex-wrap: nowrap;
+  padding-right: 5px;
+}
+#public-classes .wrapper .text-wrapper .sectitle-bar .type {
+  flex-shrink: 0;
+  line-height: 14px;
+  font-size: 14px;
+  padding: 1px 3px;
+  color: #317fff;
+  border: solid 1px;
+  border-radius: 1px;
+  position: relative;
+}
+#public-classes .wrapper .text-wrapper .sectitle-bar .type::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 4px;
+  border-top: solid 4px transparent;
+  border-right: solid 4px #317fff;
+  border-bottom: solid 4px transparent;
+}
+#public-classes .wrapper .text-wrapper .sectitle-bar .type::after {
+  content: "";
+  position: absolute;
+  left: -3.3px;
+  top: 4.7px;
+  border-top: solid 3.3px transparent;
+  border-right: solid 3.3px #fff;
+  border-bottom: solid 3.3px transparent;
+}
+#public-classes .wrapper .category,
+#public-classes .wrapper .level,
+#public-classes .wrapper .teacher {
+  font-size: 12px;
+  line-height: 22px;
+  color: #5f5f5f;
+  margin-right: 0.5em;
+}
+#public-classes .wrapper .teacher {
+  background-image: url(../img/common-icons_people_gray.png);
+  background-position: left;
+  padding-left: 1em;
+}
+#public-classes .wrapper .read {
+  float: right;
+  background-image: url(../img/common-icons_read_gray.png);
+  background-position: left;
+  padding-left: 1.25em;
+}
+#public-classes .wrapper .read,
+#public-classes .wrapper .date,
+#public-classes .wrapper .status {
+  font-size: 12px;
+  line-height: 22px;
+  color: #959595;
+}
+#public-classes .wrapper .status {
+  color: #317fff;
+  margin-left: 0.5em;
+}
+#public-classes .wrapper .brief {
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+  top: 20px;
+  transition: inherit;
+}
+#public-classes .wrapper .brief::before {
+  content: "\672C\8BFE\5185\5BB9\FF1A";
+}
+#public-classes .wrapper:hover .brief {
+  top: 0px;
+}
+
+#public-classes .wrapper+.placeholder,
+#public-classes .wrapper+.placeholder::after {
+  content: "";
+  flex-grow: 1;
+  max-width: 270px;
+}
+
+#chosen-videos .title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+#chosen-videos .content {
+  justify-content: space-between;
+  background-color: #fff;
+}
+#chosen-videos .wrapper {
+  width: 300px;
+  height: 264px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: justify;
+}
+#chosen-videos .wrapper:hover {
+  background-color: #fff;
+}
+#chosen-videos .wrapper .picture {
+  height: 188px;
+  background-size: 100%;
+  transition: inherit;
+}
+#chosen-videos .wrapper .picture .play {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(45, 47, 59, 0.7);
+  transition: inherit;
+}
+#chosen-videos .wrapper .sectitle {
+  font-size: 16px;
+  line-height: 40px;
+  transition: inherit;
+}
+#chosen-videos .wrapper:hover {
+  box-shadow: 0 0 7px 0 rgba(0,0,0,0.28)
+}
+#chosen-videos .wrapper:hover .sectitle {
+  color: #f8b300;
+}
+#chosen-videos .wrapper .teacher::before {
+  content: "\8BB2\5E08: ";
+}
+#chosen-videos .wrapper .level,
+#chosen-videos .wrapper .category {
+  float: right;
+  color: #a4a4a4;
+}
+#chosen-videos .wrapper .category {
+  margin-right: 0.5em;
+}
+#chosen-videos .wrapper+.placeholder,
+#chosen-videos .wrapper+.placeholder::after {
+  content: "";
+  flex-grow: 1;
+  max-width: 300px;
+}

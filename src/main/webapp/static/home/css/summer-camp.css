@@ -1,0 +1,204 @@
+.center.frame {
+  background-color: #fff;
+  letter-spacing: 0.02em;
+  text-indent: 0.02em;
+}
+.center.frame .title-bar {
+  width: 380px;
+  margin: auto;
+  height: auto;
+  text-align: left;
+  color: #1fa3ff;
+}
+.center.frame .title-bar .title {
+  font-size: 30px;
+  text-indent: 0.5em;
+}
+.center.frame .title-bar .subtitle {
+  font-size: 20px;
+}
+.center.frame .title-bar+.description {
+  width: 380px;
+  margin: 1.25em auto;
+  text-align: left;
+  font-size: 19px;
+  line-height: 2em;
+}
+
+#start {
+  position: relative;
+  top: -65px;
+}
+#start .panel {
+  font-size: 40px;
+  letter-spacing: 0.64em;
+  text-indent: 0.64em;
+  color: #1ea4ff;
+  text-shadow: 7px 0px 0px rgba(51,51,51,0.18);
+  line-height: 170px;
+  border-radius: 170px;
+  background-color: #fff;
+  box-shadow: 5.9553px 0.7312px 16.74px 1.26px rgba(16,142,239,18%);
+}
+
+#points .panel {
+  height: 1000px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+#points .wrapper {
+  width: 370px;
+  padding: 50px 50px 0;
+  height: 466px;
+  box-shadow: 2.9776px 0.3656px 12.48px 0.52px rgba(42,0,255,14%);
+  flex-direction: inherit;
+  justify-content: flex-start;
+  border-radius: 10px;
+}
+#points .wrapper .date {
+  font-size: 26px;
+  line-height: 2.33em;
+  color: #1fa3ff;
+  letter-spacing: 0.36em;
+  text-indent: 0.36em;
+}
+#points .wrapper .description {
+  font-size: 18px;
+  line-height: 1.75em;
+  text-align: justify;
+  color: #666666;
+}
+#points .content {
+  width: 380px;
+  margin: 0;
+  height: 220px;
+  white-space: nowrap;
+}
+#points .content .title-bar {
+  text-indent: 0em;
+  flex-wrap: nowrap;
+}
+#points .content .title-bar .title {
+  text-indent: 0em;
+}
+#points .content .title-bar .subtitle {
+  margin-left: 0.5em;
+}
+#points .blank {
+  box-shadow: none;
+}
+
+#entrance {
+  background-image: url(../img/summer-camp/entrance_picture.png);
+  background-color: #e6f6fe;
+  background-position: calc(50% + 290px) center;
+}
+#entrance .panel {
+  height: 570px;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+#entrance .title {
+  font-size: 32px;
+  color: #1fa3ff;
+  line-height: 70px;
+  margin-bottom: 30px;
+}
+#entrance img {
+  margin: 0 auto;
+}
+
+#activities .panel {
+  margin: 100px auto;
+}
+#activities .title-bar+.description {
+  margin-bottom: 2em;
+}
+#activities .content {
+  justify-content: space-between;
+}
+#activities .wrapper {
+  text-align: left;
+  line-height: 30px;
+}
+#activities .wrapper .label {
+  font-size: 20px;
+  color: #1c1c1c;
+}
+#activities .wrapper .sublabel {
+  font-size: 19px;
+  color: #8c8c8c;
+}
+
+#subjects .wrapper {
+  justify-content: space-between;
+  margin-bottom: 70px;
+}
+#subjects .wrapper:nth-child(2) {
+  flex-direction: row-reverse;
+}
+#subjects .wrapper .text-wrapper {
+  font-size: 22px;
+  line-height: 35.75px;
+  color: #717171;
+}
+#subjects .wrapper .text-wrapper .sectitle {
+  font-size: 30px;
+  margin-bottom: 1em;
+}
+
+#enrollment {
+  background-color: #1c9ff2;
+}
+#enrollment .panel {
+  height: 500px;
+  color: #fff;
+}
+#enrollment .gesso {
+  width: 1180px;
+  padding: 20px;
+  border: solid 10px;
+  border-radius: 10px;
+}
+#enrollment .content {
+  margin: 0;
+  padding: 10px 0;
+  border: solid 4px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#enrollment .input {
+  margin: 20px 0;
+}
+#enrollment .input label {
+  font-size: 24px;
+}
+#enrollment .input label::after {
+  content: ":";
+  margin-right: 1em;
+}
+#enrollment .input input {
+  color: inherit;
+}
+#enrollment .input input[type="text"] {
+  width: 280px;
+  line-height: 40px;
+  border: solid 2px;
+  background-color: transparent;
+  padding: 0 0.5em;
+}
+#enrollment .input input[type="submit"] {
+  width: 242px;
+  height: 52px;
+  font-size: 23px;
+  background-color: #00deff;
+  border: none;
+  margin-left: 4em;
+}
+#enrollment .QRC .title {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,48 @@
+.center.frame {
+  letter-spacing: 0;
+  text-indent: 0;
+}
+
+#banner {
+  height: 260px;
+}
+
+#teachers {
+  background-color: #fff;
+  overflow: hidden;
+}
+#teachers .content {
+  padding: 0 15px;
+  text-align: justify;
+}
+#teachers .content .wrapper {
+  padding: 20px 25px 20px 30px;
+  margin-top: 10px;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  background-color: #F1F1F1;
+}
+#teachers .content .wrapper .photo {
+  width: 185px;
+  height: 214px;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+#teachers .content .wrapper .text-wrapper {
+  font-size: 14px;
+  line-height: 22px;
+}
+#teachers .content .wrapper .text-wrapper >* {
+  margin: 8px 0;
+}
+#teachers .content .wrapper .text-wrapper .name {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 32px;
+}
+#teachers .content .wrapper .text-wrapper .name >* {
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 1em;
+}
