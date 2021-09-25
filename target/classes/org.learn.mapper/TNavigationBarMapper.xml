@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.learn.mapper.TNavigationBarMapper">
+
+    <resultMap type="TNavigationBar" id="TNavigationBarResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="url"    column="url"    />
+        <result property="icon"    column="icon"    />
+        <result property="createdate"    column="createDate"    />
+        <result property="typeid"    column="typeId"    />
+    </resultMap>
+
+    <sql id="selectTNavigationBarVo">
+        select id, name, url, icon, createDate, typeId from t_navigation_bar
+    </sql>
+
+    <select id="selectTNavigationBarList" parameterType="TNavigationBar" resultMap="TNavigationBarResult">
+        <include refid="selectTNavigationBarVo"/>
+        <where>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="url != null  and url != ''"> and url = #{url}</if>
+            <if test="icon != null  and icon != ''"> and icon = #{icon}</if>
+            <if test="createdate != null "> and createDate = #{createdate}</if>
+            <if test="typeid != null "> and typeId = #{typeid}</if>
+        </where>
+    </select>
+
+    <select id="selectTNavigationBarById" parameterType="Long" resultMap="TNavigationBarResult">
+        <include refid="selectTNavigationBarVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTNavigationBar" parameterType="TNavigationBar" useGeneratedKeys="true" keyProperty="id">
+        insert into t_navigation_bar
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">name,</if>
+            <if test="url != null">url,</if>
+            <if test="icon != null">icon,</if>
+            <if test="createdate != null">createDate,</if>
+            <if test="typeid != null">typeId,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">#{name},</if>
+            <if test="url != null">#{url},</if>
+            <if test="icon != null">#{icon},</if>
+            <if test="createdate != null">#{createdate},</if>
+            <if test="typeid != null">#{typeid},</if>
+        </trim>
+    </insert>
+
+    <update id="updateTNavigationBar" parameterType="TNavigationBar">
+        update t_navigation_bar
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="icon != null">icon = #{icon},</if>
+            <if test="createdate != null">createDate = #{createdate},</if>
+            <if test="typeid != null">typeId = #{typeid},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTNavigationBarById" parameterType="Long">
+        delete from t_navigation_bar where id = #{id}
+    </delete>
+
+    <delete id="deleteTNavigationBarByIds" parameterType="String">
+        delete from t_navigation_bar where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--spring整合mybatis-->
+    <!--1.读取数据库地址-->
+    <context:property-placeholder location="classpath:db.properties"/>
+    <!--2.配置连接池-阿里连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+     </bean>
+    <!--3.配置SqlSessionFactoryBean 进行整合mybatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--3.1注入连接池-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--3.2注入:找到对应的mapper.xml加入到映射文件中-->
+        <property name="mapperLocations" value="classpath:org.learn.mapper/*Mapper.xml"/>
+        <!--3.3注入:将指定包下的类进行批量别名,首字母小写-->
+        <property name="typeAliasesPackage" value="org.learn.domain"/>
+    </bean>
+    <!--4.扫描mapper接口:spring就会创建mapper接口的对象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.learn.mapper"/>
+    </bean>
+    <!--5.service交给spring管理,service注册到spring-->
+    <context:component-scan base-package="org.learn.service"/>
+</beans>
