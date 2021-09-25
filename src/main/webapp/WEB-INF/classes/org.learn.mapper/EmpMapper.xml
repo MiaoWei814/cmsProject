@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.learn.mapper.EmpMapper">
+    <!-- List<Emp> list(); -->
+    <select id="list" resultType="emp">
+        select *
+        from emp
+    </select>
+
+    <insert id="save" parameterType="emp" useGeneratedKeys="true" keyProperty="id">
+        insert into emp(name, sex, address, tel, card)
+        values (#{name}, #{sex}, #{address}, #{tel}, #{card})
+    </insert>
+
+    <delete id="delete">
+        delete
+        from emp
+        where id = #{id}
+    </delete>
+
+    <update id="edit" parameterType="emp">
+        update emp
+        set name=#{name}
+          , sex=#{sex}
+          , address=#{address}
+          , tel=#{tel}
+          , card=#{card}
+        where id = #{id}
+    </update>
+</mapper>
+

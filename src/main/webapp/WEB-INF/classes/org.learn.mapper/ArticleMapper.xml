@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.learn.mapper.ArticleMapper">
+    <sql id="selectSQL">
+        select id,
+               title,
+               url,
+               typeId,
+               clickCount,
+               content,
+               enable,
+               createDate
+        from t_article
+    </sql>
+
+
+    <sql id="ArticleWhereSQL">
+        <where>
+            <if test="title!=null and title!=''">
+                and a.title like concat('%',#{title},'%')
+            </if>
+            <if test="typeId!=null and typeId!=''">
+                and a.typeId=#{typeId}
+            </if>
+            <if test="enable!=null">
+                and a.enable=#{enable}
+            </if>
+        </where>
+    </sql>
+
+    <select id="findList" resultMap="resultMapArticle">
+        select a.*,b.* from `t_article` as a join `t_article_type` b on a.typeId=b.id
+        <include refid="ArticleWhereSQL"/>
+        order by a.id desc
+        <if test="currentPage!=null and pageSize!=null">
+            limit #{startPage},#{pageSize}
+        </if>
+    </select>
+
+    <resultMap type="Article" id="resultMapArticle">
+        <id property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="url" column="url"/>
+        <result property="clickCount" column="clickCount"/>
+        <result property="content" column="content"/>
+        <result property="enable" column="enable"/>
+        <result property="createDate" column="createDate"/>
+        <result property="typeId" column="typeId"/>
+        <association property="type" javaType="org.learn.domain.ArticleType">
+            <id property="id" column="id"/>
+            <id property="name" column="name"/>
+            <id property="code" column="code"/>
+        </association>
+    </resultMap>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(1) from t_article a
+        <include refid="ArticleWhereSQL"/>
+    </select>
+
+    <delete id="delById">
+        delete
+        from t_article
+        where id = #{id};
+    </delete>
+
+    <insert id="add" parameterType="Article" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into t_article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                title,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="typeId != null">
+                typeId,
+            </if>
+            <if test="clickCount != null">
+                clickCount,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="enable != null">
+                enable,
+            </if>
+            <if test="createDate != null">
+                createDate,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">
+                #{title},
+            </if>
+            <if test="url != null">
+                #{url},
+            </if>
+            <if test="typeId != null">
+                #{typeId},
+            </if>
+            <if test="clickCount != null">
+                #{clickCount},
+            </if>
+            <if test="content != null">
+                #{content},
+            </if>
+            <if test="enable != null">
+                #{enable},
+            </if>
+            <if test="createDate != null">
+                #{createDate},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="edit" parameterType="Article">
+        update t_article
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="url != null">
+                url = #{url},
+            </if>
+            <if test="content != null">
+                content = #{content},
+            </if>
+            <if test="enable != null">
+                `enable` = #{enable},
+            </if>
+            <if test="clickCount!=null">
+                clickCount=#{clickCount},
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+    <select id="querySortArticles" resultType="org.learn.domain.ArticleSorts">
+        select
+                a.title as 'title',
+                a.url as 'url',
+                date_format(a.createDate, '%Y-%d-%m') as 'createDate',
+                b.id as 'typeId'
+        from t_article a
+                     join t_article_type b on a.typeId = b.id
+        where a.enable=1
+        order by a.createDate desc
+    </select>
+    <select id="queryById" resultType="org.learn.domain.Article">
+        <include refid="selectSQL"/>
+        where id=#{id}
+    </select>
+</mapper>
