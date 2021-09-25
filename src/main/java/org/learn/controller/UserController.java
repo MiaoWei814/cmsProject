@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -79,6 +80,16 @@ public class UserController {
     @PostMapping("/exportExcel")
     public String export(ModelMap map, String username) throws Exception {
          return userService.export(username, map);
+    }
+    /**
+     * 导入
+     *
+     * @return {@link AjaxResult}
+     */
+    @PostMapping("/import")
+    @ResponseBody
+    public AjaxResult importExcel(MultipartFile excel) throws Exception {
+         return userService.importExcel(excel);
     }
 
 

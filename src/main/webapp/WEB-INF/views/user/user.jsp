@@ -113,6 +113,35 @@
             </div>
         </div>
     </div>
+
+    <!-- 4.导入用户的模态框 -->
+    <div class="modal fade" id="importModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content message_align">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/system/user/import" method="post" enctype="multipart/form-data" class="form-horizontal" id="importForm">
+                        <input type="hidden" name="id" id="id">
+                        <div class="form-group row">
+                            <label for="excel" class="control-label col-md-2" style="margin-top: 10px;margin-left: -1px;padding-left: 16px;">技师花名册</label>
+                            <div class="col-md-10">
+                                <input class="form-control" id="excel" type="file" name="excel">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <a href='javascript:void(0);' id="sureButton" class="btn btn-success">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <%--引入公共JS--%>
 <%@include file="/WEB-INF/views/common/includeBottomStatic.jsp" %>
@@ -231,17 +260,25 @@
                 }
             })
         })
+        /*点击导入按钮弹出选择excle的模态框*/
+        $("#importButton").on("click",function(){
+            $("#importModal").modal("show")
+        })
 
-        // //导出
-        // $("#downloadButton").on("click",function (){
-        //     let val = $("#title").val();
-        //     $.ajax({
-        //         type:"post",
-        //         data: {username:val},
-        //         url:"/system/user/exportExcel"
-        //     })
-        //
-        // })
+
+        /*excel模态框确认按钮，绑定事件，提交表单*/
+        $("#sureButton").on("click",function(){
+            $("#importForm").ajaxSubmit({
+                success:function(result){
+                    $("#importModal").modal("hide")//关闭模态框
+                    if(result.code===200){
+                        GridManager.refreshGrid("demo-ajaxPageCode");//刷新数据
+                    }else{
+                        alert(result.msg)
+                    }
+                }
+            })
+        })
     })
 
 </script>

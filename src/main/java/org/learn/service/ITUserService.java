@@ -7,10 +7,12 @@ import org.learn.domain.vo.QueryUserVo;
 import org.learn.util.AjaxResult;
 import org.learn.util.PageBean;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 /**
  * ituser服务
@@ -61,4 +63,12 @@ public interface ITUserService
      * @param map
      * @return*/
     String export(String username, ModelMap map) throws Exception;
+
+    /**
+     * 导入excel
+     *
+     * @param file 文件
+     * @return {@link AjaxResult}
+     */
+    AjaxResult importExcel(MultipartFile file) throws Exception;
 }

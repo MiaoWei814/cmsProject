@@ -1,10 +1,14 @@
 package org.learn.service.impl;
 
 import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
+import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.io.FileTypeUtil;
+import cn.hutool.core.io.file.FileNameUtil;
 import cn.hutool.core.lang.Validator;
 import cn.hutool.core.text.CharSequenceUtil;
 import org.learn.domain.TUser;
@@ -20,11 +24,13 @@ import org.learn.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.Comparator;
@@ -236,5 +242,44 @@ public class TUserServiceImpl implements ITUserService {
 
         //View视图 走视图,视图解析器.
         return NormalExcelConstants.EASYPOI_EXCEL_VIEW;
+    }
+
+    /**
+     * 导入excel
+     *
+     * @param file 文件
+     * @return {@link AjaxResult}
+     */
+    @Override
+    public AjaxResult importExcel(MultipartFile file) throws Exception {
+        try{
+            if (file == null) {
+                throw new CMSRuntimeException("上传文件不能为空!");
+            }
+            String filename = file.getOriginalFilename();
+            String suffix = FileNameUtil.getSuffix(filename);
+            if (!"xlsx".equals(suffix)) {
+                throw new CMSRuntimeException("请上传指定格式xlsx");
+            }
+        }catch (Exception e) {
+            return AjaxResult.error(e.getMessage());
+        }
+
+        //参数1:文件的IO
+        //参数2:导入实体类
+        //参数3:导入参数设置
+        ImportParams params = new ImportParams();
+        //设置标题行, 行以下的就是数据可以导入
+        params.setTitleRows(1);
+        List<Object> objects = ExcelImportUtil.importExcel(file.getInputStream(), TUser.class, params);
+        //循环添加到对象里去
+        boolean isFlag = false;
+        for (Object item : objects) {
+            isFlag=tUserMapper.insertTUser((TUser) item)>0;
+        }
+        if (!isFlag) {
+            return AjaxResult.error("添加数据库失败!");
+        }
+        return AjaxResult.success();
     }
 }
