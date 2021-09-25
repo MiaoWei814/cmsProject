@@ -1,0 +1,88 @@
+/* footer module for "itsource.cn"(PC) START */
+/* @version 20181022 */
+
+#footer_misc {
+  font-size: 14px;
+}
+#footer_misc .panel {
+  width: 1160px;
+  padding: 0 30px;
+}
+#footer_misc .panel:not(:last-child) {
+  border-bottom: solid 1px #e2e2e2;
+}
+#footer_misc a {
+  display: inline-block;
+}
+#footer_misc a:hover {
+  color: #f8b300;
+}
+#footer_services {
+  height: 120px;
+  justify-content: space-between;
+}
+#footer_services .icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f1f1f1;
+  border-radius: 14px;
+}
+#footer_services .text {
+  width: 11em;
+  text-align: left;
+  margin-left: 1em;
+}
+#footer_misc .a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: stretch;
+}
+#footer_misc .b {
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+#footer_misc .b a {
+  margin: 0 1em;
+}
+#footer_misc .b a:first-child {
+  margin-left: 0;
+}
+#footer_misc .splitter {
+  width: 1px;
+  background-color: #e2e2e2;
+}
+#footer_misc .a .phone {
+  font-size: 28px;
+  color: #fff;
+  line-height: 2em;
+  margin-left: 0.5em;
+}
+#footer_misc .b {
+  width: 426px;
+}
+#footer_misc .c {
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-around;
+  width: 370px;
+  padding: 0 50px;
+  height: 130px;
+  letter-spacing: 1em;
+  text-indent: 1em;
+}
+#footer_misc .copyright {
+  text-align: center;
+  line-height: 2em;
+  padding: 1em 0;
+}
+#footer_misc .d >* {
+  margin: 0 1em;
+}
+
+/* footer module for "itsource.cn"(PC) END */

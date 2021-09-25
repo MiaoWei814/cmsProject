@@ -1,0 +1,170 @@
+/* header module for "itsource.cn"(PC) START */
+/* @version 20181022 */
+
+.header.frame .container {
+  overflow: visible;
+}
+
+#header_banner {
+  display: none;
+}
+#header_wx-wb {
+  z-index: 2;
+  background-color: #fefefe;
+}
+#header_wx-wb .panel {
+  justify-content: space-between;
+  font-size: 14px;
+}
+#header_wx-wb .panel * {
+  display: inline-block;
+  margin: 5px 10px;
+}
+#header_wx-wb .panel .wb,
+#header_wx-wb .panel .wx {
+  position: relative;
+  cursor: pointer;
+}
+#header_wx-wb .panel .wb::after,
+#header_wx-wb .panel .wx::after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: 150%;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  box-shadow: 0 5px 12px 0 rgba(0,0,0,0.2);
+  visibility: hidden;
+}
+#header_wx-wb .panel .wb::after {
+	background-image: url(../img/wb.png);
+}
+#header_wx-wb .panel .wx::after {
+	background-image: url(../img/wx.png);
+}
+#header_wx-wb .panel .wb:hover::after,
+#header_wx-wb .panel .wx:hover::after {
+  visibility: visible;
+}
+#header_wx-wb .panel .phone {
+  color: #333;
+  margin-right: 0;
+}
+
+#header_navigator {
+  z-index: 1;
+  height: 150px;
+  padding-top: 20px;
+  background-color: #f6f6f6;
+  overflow: visible;
+}
+#header_navigator .panel {
+  padding: 0 10px;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+#header_navigator .panel .logo_n_regions {
+  height: 80px;
+}
+#header_navigator .panel .logo {
+  margin: 0 30px;
+}
+#header_navigator .panel .regions {
+  width: 303px;
+  height: 40px;
+  justify-content: space-between;
+}
+#header_navigator .panel .regions .wrapper {
+  width: 75px;
+  height: 50px;
+  background-position: top;
+  align-content: flex-end;
+  align-items: flex-end;
+  font-size: 12px;
+  color: #f8b300;
+  filter: grayscale(1) brightness(0.4);
+}
+#header_navigator .panel .regions .wrapper:hover,
+#header_navigator .panel .regions .wrapper.activated {
+  filter: grayscale(0) brightness(1);
+}
+#header_navigator .panel .regions .splitter {
+  width: 1px;
+  height: 100%;
+  background-color: #e8e8e9;
+}
+#header_navigator .panel .motto_n_phone {
+  padding: 5px 0;
+  text-align: right;
+}
+#header_navigator .panel .phone {
+  font-size: 20px;
+  font-weight: bold;
+  color: #423f4b;
+}
+#header_navigator .panel .phone * {
+  vertical-align: middle;
+}
+#header_navigator .panel .phone .icon {
+  margin-right: 0.5em;
+}
+#header_navigator .panel .links {
+  height: 50px;
+  font-size: 16px;
+  align-content: stretch;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+#header_navigator .panel .links a {
+  padding-bottom: 5px;
+}
+#header_navigator .panel .links a:not(:first-child) {
+  margin-left: 3em;
+}
+#header_navigator .panel .links a .text {
+  line-height: 30px;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
+}
+#header_navigator .panel .links a:hover .text,
+#header_navigator .panel .links a.activated .text {
+  border-bottom-color: #f8b300;
+}
+
+#header_navigator >#categories-menu {
+  line-height: 50px;
+  background-color: rgba(59,54,75,0.9);
+  color: #fff;
+}
+#header_navigator >#categories-menu.deactivated {
+  height: 0;
+  overflow: hidden;
+}
+#header_navigator >#categories-menu [category]:hover {
+  color: #f8b300;
+}
+#header_navigator >#categories-menu .splitter {
+  margin: 0 1em;
+}
+
+
+
+#crumbs {
+  padding-top: 10px;
+  text-align: left;
+  font-size: 14px;
+  color: #666;
+}
+#crumbs a {
+  display: inline;
+}
+#crumbs::before {
+  content:"\5F53\524D\4F4D\7F6E\FF1A";
+  padding-left: 20px;
+  background-image: url(../img/common-icons_location.png);
+  background-position: left bottom;
+}
+
+/* header module for "itsource.cn"(PC) END */

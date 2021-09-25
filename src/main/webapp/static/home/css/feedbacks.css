@@ -1,0 +1,19 @@
+#banner {
+  height: 350px;
+}
+
+#intro {
+  background-color: #fff;
+  padding: 30px 40px;
+}
+#intro .title {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 40px;
+}
+#intro .content {
+  justify-content: space-between;
+}
+#intro .content img {
+  margin: 20px 0;
+}

@@ -1,0 +1,120 @@
+.center.frame {
+  letter-spacing: 0em;
+  text-indent: 0em;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+
+
+#outline.majority {
+  padding-bottom: 30px;
+}
+#outline.majority .title {
+  height: 76px;
+  line-height: 128px;
+}
+#outline.majority .sectitle {
+  font-size: 22px;
+  font-weight: bold;
+}
+#outline.majority .sectitle::before {
+  content: " ";
+  display: inline-block;
+  width: 3px;
+  height: 24px;
+  margin-right: 4px;
+  transform: translateY(4px);
+  background-color: #ffb700;
+}
+#outline.majority dl {
+  counter-reset: outline;
+}
+#outline.majority dl dt {
+  counter-increment: outline;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+}
+#outline.majority dl.accepts >dt::before {
+  content: counter(outline) ".";
+}
+#outline.majority dl.accepts >dt >div::after {
+  content: "\FF1B"
+}
+#outline.majority dl.accepts >dt:last-child >div::after {
+  content: "\3002"
+}
+#outline.majority dl.features >dt {
+  font-weight: bold;
+  margin: 10px 0;
+}
+#outline.majority dl.features >dt::before {
+  content: "0" counter(outline) " ";
+}
+#outline.majority dl.features >dd {
+  margin-left: 1.5em;
+}
+#outline.majority dl.features >dl {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+#outline.majority dl.features >dl >dt:nth-child(2n-1) {
+  float: left;
+  width: 400px;
+}
+#outline.majority dl.features >dl >dt::before {
+  content: "0" counter(outline);
+  background-color: #333;
+  color: #fff;
+  padding: 0 0.2em;
+  margin-right: 0.4em;
+  border-radius: 4px;
+}
+#outline.majority dl.features >dl >dt:nth-child(n+10)::before {
+  content: counter(outline);
+}
+#outline.majority dl.features >dl >dt::after {
+  content: "\FF1B"
+}
+#outline.majority dl.features >dl >dt:last-child::after {
+  content: "\3002"
+}
+  
+#outline.majority a {
+  display: inline;
+  color: #f8b300;
+  text-decoration: underline;
+}
+#outline.majority [f] {
+  color: #999;
+}
+
+#others.majority {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-align: justify;
+}
+#others.majority .title {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 50px;
+}
+#others.majority .li {
+  line-height: 26px;
+  width: 50%;
+}
+#others.majority .li:nth-child(2n-1) {
+  float: left;
+}
+#others.majority .li::before {
+  content: "\2022";
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}

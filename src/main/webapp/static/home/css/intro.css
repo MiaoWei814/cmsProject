@@ -1,0 +1,29 @@
+#banner {
+  height: 350px;
+}
+
+#intro {
+  background-color: #fff;
+  padding: 30px 40px;
+}
+#intro .title {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 40px;
+}
+#intro .content {
+  text-align: justify;
+  text-indent: 2.2em;
+  font-size: 16px;
+  line-height: 26px;
+}
+#intro .content >:first-child {
+  text-indent: 0;
+}
+#intro .content >[b] {
+  font-weight: bold;
+  margin-top: 24px;
+}
+#intro .content .photo {
+  margin-top: 40px;
+}

@@ -1,0 +1,38 @@
+/* pagination-in-theme module for "itsource.cn"(PC) START */
+/* @version 20190111 */
+
+.pagination-in-theme {
+  letter-spacing: 0;
+  text-indent: 0;
+  margin: 40px 0;
+}
+.pagination-in-theme >* {
+  line-height: 14px;
+  font-size: 14px;
+  margin: 0 0.2em;
+}
+.pagination-in-theme .index {
+  line-height: 18px;
+  padding: 0 0.35em;
+  border-radius: 18px;
+  cursor: pointer;
+}
+.pagination-in-theme .index.active {
+  background-color: #FF9F00;
+  color: #fff;  
+}
+.pagination-in-theme .prev,
+.pagination-in-theme .next {
+  cursor: pointer;
+}
+.pagination-in-theme .prev::after {
+  content: "<";
+}
+.pagination-in-theme .next::after {
+  content: ">";
+}
+.pagination-in-theme .ellipsis::after {
+  content: "...";
+}
+
+/* pagination-in-theme module for "itsource.cn"(PC) END */
