@@ -1,0 +1,223 @@
+.center.frame {
+  letter-spacing: 0;
+  text-indent: 0;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+#about-us .panel {
+  background-color: #fff;
+  padding: 15px 27px 50px;
+}
+#about-us [tabs-keel=about] {
+  border-bottom: solid 1px #ebeaee;
+}
+#about-us [tabs-keel=about] >.tab {
+  font-size: 16px;
+  line-height: 50px;
+  border-bottom: solid 3px transparent;
+  width: 80px;
+  margin: 0 40px -2px;
+}
+#about-us [tabs-keel=about] >.tab.active {
+  color: #FFB700;
+  border-bottom-color: currentColor;
+}
+#about-us [tabs-panels-keel=about] {
+  text-align: justify;
+}
+
+#about-us .tab-panel::after {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  left: 2px;
+  top: -22px;
+  background-image: url(../img/about-us/about-us_top.png);
+}
+#about-us .tab-panel >dl {
+  width: 1075px;
+  margin-left: 24px;
+  border-left: dashed 1px #d9d9d9;
+  padding-left: 40px;
+  padding-top: 30px;
+  margin-top: 30px;
+}
+#about-us .tab-panel >dl >dt {
+  font-size: 22px;
+  line-height: 60px;
+  font-weight: bold;
+  position: relative;
+}
+#about-us .tab-panel >dl >dt::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  left: -43px;
+  top: 28px;
+  background-color: rgb(255,183,0);
+  border-radius: 4px;
+  box-shadow: 0 0 0 3px rgb(255,183,0,0.3333);
+}
+#about-us .tab-panel >dl >dt >* {
+  font-size: 14px;
+  font-weight: normal;
+  margin-left: 1em;
+}
+#about-us .tab-panel >dl >dd {
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+#about-us .tab-panel >dl >dd img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+#services+dd .wrapper {
+  width: 33.3333%;
+  height: 210px;
+  flex-direction: column;
+  text-align: center;
+  border: solid 0.5px #ebebeb;
+}
+#services+dd .wrapper:nth-child(-n+3) {
+  border-top-color: transparent;
+}
+#services+dd .wrapper:nth-child(3n) {
+  border-right-color: transparent;
+}
+#services+dd .wrapper:nth-child(n+4) {
+  border-bottom-color: transparent;
+}
+#services+dd .wrapper:nth-child(3n-2) {
+  border-left-color: transparent;
+}
+#services+dd .wrapper .icon {
+  width: 80px;
+  height: 70px;
+}
+#services+dd .wrapper .label {
+  font-weight: bold;
+  line-height: 40px;
+}
+#services+dd .wrapper .description{
+  font-size: 14px;
+  line-height: 26px;
+  color: #5d5d5d;
+}
+
+#memo+dd {
+  line-height: 26px!important;
+}
+#memo+dd ul {
+  padding-left: 25px;
+  padding-right: 10px;
+  margin-left: 27px;
+  border-left: solid 1px #f8b300;
+}
+#memo+dd ul li {
+  background-color: #f6f6f6;
+  margin: 20px 0;
+  padding: 0 30px;
+  height: 74px;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+}
+#memo+dd ul li::before,
+#memo+dd ul li::after {
+  content: "";
+  position: absolute;
+}
+#memo+dd ul li::before {
+  width: 8px;
+  height: 8px;
+  left: -30px;
+  background-color: #f8b300;
+  border-radius: 4px;
+}
+#memo+dd ul li::after {
+  left: -8px;
+  border-top: solid 12px transparent;
+  border-right: solid 8px #f6f6f6;
+  border-bottom: solid 12px transparent;
+}
+#memo+dd ul li .label {
+  background-color: #F8B300;
+  color: #fff;
+  padding: 0 0.5em;
+  border-radius: 4px;
+}
+
+#about-us dt.position+dd >dl >dt {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 50px;
+  color: #FFBB0F;
+  padding-left: 22px;
+  background-position: left;
+  position: relative;
+}
+#about-us dt.position+dd >dl >dt::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  left: -43px;
+  top: 23px;
+  background-color: rgb(255,183,0);
+  border-radius: 4px;
+}
+#about-us dt.position+dd >dl >dt::after {
+  content: " :";
+}
+#about-us dt.position+dd >dl >dt.condition {
+  background-image: url(../img/about-us/position_condition_icon.png);
+}
+#about-us dt.position+dd >dl >dt.salary {
+  background-image: url(../img/about-us/position_salary_icon.png);
+}
+#about-us dt.position+dd >dl >dt.location {
+  background-image: url(../img/about-us/position_location_icon.png);
+}
+#about-us dt.position+dd >dl >dd {
+  font-size: 14px;
+  margin-left: 0;
+  margin-bottom: 15px;
+}
+#about-us dt.condition+dd,
+#offer+dd {
+  counter-reset: join;
+}
+#about-us dt.condition+dd >::before,
+#offer+dd >::before {
+  content: counter(join) "\3001";
+  counter-increment: join;
+}
+
+#location::after,
+#phone::after {
+  content: "";
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 44px;
+  left: -63px;
+  top: 8px;
+}
+#location::after {
+  background-image: url(../img/about-us/location_icon.png);
+}
+#phone::after {
+  background-image: url(../img/about-us/phone_icon.png);
+}

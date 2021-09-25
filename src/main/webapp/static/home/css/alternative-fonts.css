@@ -1,0 +1,27 @@
+[font="sans-exlight"] {
+	font-family: "Microsoft Jhenghei";
+	-webkit-text-stroke: 0.005em #fff;
+}
+[font="sans-light"] {
+	font-family: "Microsoft Jhenghei"
+}
+[font="sans-normal"] {
+	font-family: "Microsoft Yahei"
+}
+[font="sans-regular"] {
+	font-family: "Microsoft Yahei";
+	-webkit-text-stroke: 0.001em;
+}
+[font="sans-medium"] {
+	font-family: "Microsoft Jhenghei";
+	font-weight: bold;
+}
+[font="sans-bold"] {
+	font-family: "Microsoft Yahei";
+	font-weight: bold;
+	-webkit-text-stroke: 0.005em #fff;
+}
+[font="sans-heavy"] {
+	font-family: "Microsoft Yahei";
+	font-weight: bold;
+}

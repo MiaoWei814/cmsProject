@@ -1,0 +1,248 @@
+/* 2-up-vertical module for "itsource.cn"(PC) START */
+/* @version 20190509 */
+
+#center .li:hover {
+  color: #f8b300;
+}
+#center .li * {
+  transition: all 0.1s ease;
+}
+#center-right,
+#center-left {
+  height: 100%;
+}
+#center-right .wrapper.minority,
+#center-left .wrapper.majority {
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+
+
+#center-right {
+  float: right;
+  width: 338px;
+  letter-spacing: 0em;
+  text-indent: 0em;
+}
+#center-right .wrapper.minority {
+  width: inherit;
+  padding: 30px 15px 20px;
+  text-align: justify;
+  overflow: hidden;
+}
+#center-right .wrapper.minority .title-bar {
+  height: 22px;
+  justify-content: space-between;
+  align-items: flex-end;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+  border-bottom: solid 1px #AFAFAF;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+#center-right .wrapper.minority .title-bar .text {
+  font-size: 22px;
+  font-weight: bold;
+}
+#center-right .wrapper.minority .picture {
+  background-size: cover;
+  height: 204px;
+}
+#center-right .wrapper.minority .simple-list {
+  margin: -5px 0;
+}
+#center-right .wrapper.minority .simple-list .li {
+  display: inline-block;
+  max-width: 100%;
+  line-height: 40px;
+}
+#center-right .wrapper.minority .simple-list .li::before {
+  content: "\2022";
+  margin-right: 20px;
+}
+#center-right .wrapper.minority .more {
+  float: right;
+  font-size: 14px;
+  padding-bottom: 3px;
+  border-bottom: solid 1px transparent;
+}
+#center-right .wrapper.minority .more::after {
+  display: inline-block;
+  content: ">>";
+  transform: scale(0.7, 1.4);
+}
+#center-right .wrapper.minority .more:hover {
+  border-bottom-color: currentColor;
+}
+
+#route-of-hero {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+#route-of-hero.active {
+  opacity: 1;
+}
+
+
+#center-left {
+  float: left;
+  width: 840px;
+  flex-direction: column;
+}
+#center-left .wrapper.majority {
+  padding-left: 45px;
+  padding-right: 45px;
+  border-radius: 4px;
+}
+#center-left .article .info {
+  margin: 20px 0;
+  font-size: 14px;
+  text-align: left;
+}
+#center-left .article .info >* {
+  margin-right: 2.5em;
+}
+#center-left .article .info [b] {
+  font-weight: bold;
+}
+#center-left .article .title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+#center-left .article .content {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: justify;
+}
+#center-left .article .content >* {
+  margin: 20px auto;
+}
+#center-left .article .content img {
+  display: block;
+  max-width: 100%;
+  margin: inherit;
+}
+#center-left .article .label {
+  font-size: 16px;
+  font-weight: bold;
+}
+#center-left .article .label::after {
+  content: ":\3000";
+}
+#center-left .article .prev_n_next {
+  font-size: 16px;
+  line-height: 40px;
+  margin: 40px 0;
+  background-color: #f6f6f6;
+}
+#center-left .article .prev_n_next >* {
+  width: 50%;
+  padding: 0 1em;
+}
+#center-left .article .prev_n_next >*:hover {
+  color: #f8b300;
+}
+#center-left .article .prev_n_next >*::before {
+  font-weight: bold;
+  color: #333;
+}
+#center-left .article .prev_n_next .prev::before {
+  content: "\4E0A\4E00\7BC7: "
+}
+#center-left .article .prev_n_next .next::before {
+  content: "\4E0B\4E00\7BC7: "
+}
+
+
+/*
+#alumns更多就业明星
+#salaries就业薪资
+#articles最新教程
+#recommendeds推荐阅读
+*/
+
+
+
+/*开班时间*/
+#starteds.minority .regions {
+  font-size: 14px;
+}
+#starteds.minority .regions >.tab {
+  margin-left: 1em;
+  cursor: pointer;
+}
+#starteds.minority .regions >.tab:hover,
+#starteds.minority .regions >.tab.active {
+  border-bottom: solid 3px #f8b300;
+}
+#starteds.minority .li {
+  font-size: 16px;
+  line-height: 40px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+#starteds.minority .li .name {
+  flex-shrink: 0;
+  width: 7em;
+  text-align: left;
+}
+#starteds.minority .li .entrance {
+  line-height: 24px;
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+  padding: 0 0.5em;
+  border-radius: 24px;
+}
+#starteds [isclassopened=false] .entrance::after {
+  content: "\7ACB\5373\54A8\8BE2";
+}
+#starteds [isclassopened=true] .entrance::after {
+  content: "\7206\6EE1\5F00\73ED";
+}
+#starteds.minority .li:hover .entrance,
+#starteds.minority .li[isclassopened=false] .entrance {
+  background-color: #f8b300;
+}
+#starteds.minority .more {
+  margin-top: 15px;
+  text-align: right;
+}
+
+/*单行滚动广告*/
+#ads.minority {
+  height: 107px;
+  padding: 0!important;
+}
+
+/*公开课*/
+#public-classes.minority .text-wrapper {
+  text-align: justify;
+  line-height: 1.625em;
+  margin-top: 15px;
+}
+#public-classes.minority .text-wrapper .name {
+  font-size: 22px;
+  line-height: 32px;
+}
+
+/*视频教程*/
+#videos.minority .name {
+  font-size: 22px;
+  line-height: 40px;
+  margin-top: 10px;
+}
+
+/*精选视频*/
+#chosen-videos.minority {
+  padding-bottom: 0;
+}
+#chosen-videos.minority .picture {
+  margin: 20px 0;
+}
+
+/* 2-up-vertical module for "itsource.cn"(PC) END */
