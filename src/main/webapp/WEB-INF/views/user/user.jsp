@@ -27,12 +27,14 @@
     <div class="row app-title">
         <div class="col-md-12">
             <!-- 表单 -->
-            <form id="queryForm" class="form-inline">
+            <form id="queryForm" class="form-inline" action="/system/user/exportExcel" method="post">
                 <div class="form-group">
                     <label for="title">用户名：</label>
                     <input type="text" class="form-control" name="username" id="title">
                 </div>
                 <button type="button" id="queryButton" class="btn btn-success" style="margin-left: 20px">查询</button>
+                <button  type="submit" id="downloadButton" class="btn btn-info" style="margin-left: 20px">导出</button>
+                <button  type="button" id="importButton" class="btn btn-danger" style="margin-left: 20px">导入</button>
             </form>
         </div>
     </div>
@@ -229,6 +231,17 @@
                 }
             })
         })
+
+        // //导出
+        // $("#downloadButton").on("click",function (){
+        //     let val = $("#title").val();
+        //     $.ajax({
+        //         type:"post",
+        //         data: {username:val},
+        //         url:"/system/user/exportExcel"
+        //     })
+        //
+        // })
     })
 
 </script>

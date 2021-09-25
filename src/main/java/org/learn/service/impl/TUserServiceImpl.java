@@ -1,5 +1,8 @@
 package org.learn.service.impl;
 
+import cn.afterturn.easypoi.entity.vo.NormalExcelConstants;
+import cn.afterturn.easypoi.excel.entity.ExportParams;
+import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.lang.Validator;
@@ -16,6 +19,7 @@ import org.learn.util.Constant;
 import org.learn.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -209,5 +213,28 @@ public class TUserServiceImpl implements ITUserService {
         return AjaxResult.success();
     }
 
+    /**
+     * 导出
+     *  @param username 用户名
+     * @param map
+     * @return*/
+    @Override
+    public String export(String username, ModelMap map) throws Exception{
+        List<TUser> queryList=tUserMapper.selectExport(username);
+//        //设置导出参数
+        ExportParams params = new ExportParams("用户账号手册","详情", ExcelType.XSSF);
 
+        //设置映射关系
+        //集合
+        map.put(NormalExcelConstants.DATA_LIST, queryList);
+        //导出实体
+        map.put(NormalExcelConstants.CLASS, TUser.class);
+        //参数
+        map.put(NormalExcelConstants.PARAMS, params);
+        //文件名称
+        map.put(NormalExcelConstants.FILE_NAME, "userLists");
+
+        //View视图 走视图,视图解析器.
+        return NormalExcelConstants.EASYPOI_EXCEL_VIEW;
+    }
 }

@@ -76,4 +76,13 @@
             limit #{startPage},#{pageSize}
         </if>
     </select>
+
+    <select id="selectExport" resultMap="TUserResult">
+        select * from  t_user
+        <where>
+            <if test="name!=null and name!=''">
+                username like concat('%',#{name },'%')
+            </if>
+        </where>
+    </select>
 </mapper>

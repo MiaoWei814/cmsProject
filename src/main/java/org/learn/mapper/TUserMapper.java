@@ -1,5 +1,6 @@
 package org.learn.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.learn.domain.TUser;
 import org.learn.domain.vo.QueryUserDto;
 import org.learn.domain.vo.QueryUserVo;
@@ -63,4 +64,12 @@ public interface TUserMapper
      * @return {@link List}<{@link QueryUserVo}>
      */
     List<QueryUserVo> selectUserAll(QueryUserDto dto);
+
+    /**
+     * 选择export
+     *
+     * @param username 用户名
+     * @return {@link List}<{@link TUser}>
+     */
+    List<TUser> selectExport(@Param("name") String username);
 }

@@ -1,5 +1,6 @@
 package org.learn.domain;
 
+import cn.afterturn.easypoi.excel.annotation.Excel;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -21,16 +22,19 @@ public class TUser {
     /**
      * 用户名
      */
+    @Excel(name = "用户名")
     private String username;
 
     /**
      * 密码
      */
+    @Excel(name = "密码")
     private String password;
 
     /**
      * 昵称
      */
+    @Excel(name = "昵称")
     private String nickName;
 }
 

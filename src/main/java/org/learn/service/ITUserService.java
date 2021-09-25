@@ -6,6 +6,7 @@ import org.learn.domain.vo.QueryUserDto;
 import org.learn.domain.vo.QueryUserVo;
 import org.learn.util.AjaxResult;
 import org.learn.util.PageBean;
+import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -53,4 +54,11 @@ public interface ITUserService
      * @return {@link AjaxResult}
      */
     AjaxResult save(TUser user);
+
+    /**
+     * 导出
+     *  @param username 用户名
+     * @param map
+     * @return*/
+    String export(String username, ModelMap map) throws Exception;
 }

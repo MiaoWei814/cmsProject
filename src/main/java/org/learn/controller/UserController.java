@@ -8,10 +8,10 @@ import org.learn.util.AjaxResult;
 import org.learn.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @program: frame
@@ -69,4 +69,17 @@ public class UserController {
     public AjaxResult saveOrEdit(TUser user) {
         return userService.save(user);
     }
+
+    /**
+     * 导出
+     *
+     * @param username 用户名
+     * @return {@link AjaxResult}
+     */
+    @PostMapping("/exportExcel")
+    public String export(ModelMap map, String username) throws Exception {
+         return userService.export(username, map);
+    }
+
+
 }
