@@ -1,0 +1,64 @@
+.center.frame {
+  letter-spacing: 0em;
+  text-indent: 0em;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+
+
+#alumn.majority .title-bar {
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: dashed 1px #9a9a9a;
+}
+#alumn.majority .title-bar .text {
+  font-size: 22px;
+  font-weight: bold;
+}
+#alumn.majority .title-bar .text::before {
+  content: " ";
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  margin-right: 4px;
+  transform: translateY(2px);
+  background-color: #ffb700;
+}
+#alumn.majority .title-bar .date {
+  font-size: 14px;
+  color: #9a9a9a;
+}
+#alumn.majority .brief {
+  padding: 8px 28px;
+  justify-content: space-around;
+  box-shadow: 0px 0px 7px 0px rgba(50,78,122,67%);
+  border-radius: 4px;
+}
+#alumn.majority .brief >* {
+  width: 200px;
+}
+#alumn.majority .brief .label {
+  font-size: 14px;
+}
+#alumn.majority .video {
+  border-bottom: dashed 1px #9a9a9a;
+}
+#alumn.majority .video >* {
+  margin: inherit;
+}
+#alumn.majority .video .description >:last-child {
+  text-align: right;
+}
+#alumn.majority .sectitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#iframe-wrapper {
+  text-align: center;
+}

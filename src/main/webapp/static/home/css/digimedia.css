@@ -1,0 +1,603 @@
+@import url("nm.css");
+
+/* Override basic(PC)_20190510.css START */
+body {
+    letter-spacing: 0em;
+    text-indent: 0em;
+}
+.center.frame {
+  background-color: #000;
+  color: #fff;
+}
+.center.frame .panel {
+  margin: 0 auto;
+}
+.center.frame .titles {
+  display: inline-block;
+  margin: 70px 0;
+  position: relative;
+}
+.center.frame .titles .title {
+  font-size: 38px;
+  font-weight: bold;
+  position: relative;
+}
+.center.frame .titles .decorator {
+  position: absolute;
+  width: 146px;
+  height: 51px;
+  top: -8px;
+}
+.center.frame .titles .decorator:nth-of-type(1) {
+  left: -170px;
+}
+.center.frame .titles .decorator:nth-of-type(2) {
+  right: -170px;
+  transform: rotateY(180deg);
+}
+.center.frame .titles .subtitle {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 30px;
+  letter-spacing: 0.1em;
+}
+.center.frame .panel .content {
+  margin: auto 0;
+}
+/* Override basic(PC)_20190510.css END */
+
+/* Override header(PC)_20181022.css START */
+#header_wx-wb {
+  display: none;
+}
+#header_navigator {
+  z-index: 1;
+  height: 0;
+  overflow: visible;
+  -webkit-filter: invert(100%) brightness(200%) hue-rotate(215deg) saturate(1000%);
+  -moz-filter: invert(100%) brightness(200%) hue-rotate(215deg) saturate(1000%);
+  filter: invert(100%) brightness(200%) hue-rotate(215deg) saturate(1000%);
+}
+/* Override header(PC)_20181022.css END */
+
+/* Override footer(PC)_20181022.css START */
+#footer_misc .container {
+  height: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  overflow: visible;
+}
+#footer_misc .panel {
+  color: #fff;
+  flex-shrink: 0;
+}
+#footer_services {
+  display: none;
+}
+/* Override footer(PC)_20181022.css END */
+
+
+#intro {
+  font-size: 20px;
+  line-height: 36px;
+}
+#intro .panel {
+  width: 830px;
+  margin-top: -2.25em;
+}
+#intro .description {
+  margin: 1.75em 0;
+}
+#intro .description.highlighted {
+  height: 250px;
+  flex-direction: column;
+  align-items: flex-start;
+  border: solid 2px;
+  
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#900db1+0,2e14c7+100 */
+border-image: -moz-linear-gradient(-42deg, #900db1 0%, #2e14c7 100%) 1 1; /* FF3.6-15 */
+border-image: -webkit-linear-gradient(-42deg, #900db1 0%,#2e14c7 100%) 1 1; /* Chrome10-25,Safari5.1-6 */
+border-image: linear-gradient(132deg, #900db1 0%,#2e14c7 100%) 1 1; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#intro .description.highlighted .picture {
+  margin-right: 50px;
+}
+#intro .description.highlighted .highlighted {
+  color: #c801d9;
+}
+
+#advantages .content {
+  height: 360px;
+  justify-content: space-between;
+}
+#advantages .wrapper {
+  width: 590px;
+  height: 340px;
+  flex-direction: column;
+  align-items: stretch;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1d228c+0,1d228c+100&1+0,0.9+15,0.7+25,0.5+40,1+100,0.3+100 */
+  background: -moz-linear-gradient(left, rgba(29,34,140,1) 0%, rgba(29,34,140,0.9) 25%, rgba(29,34,140,0.7) 50%, rgba(29,34,140,0.5) 75%, rgba(29,34,140,0.4) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(29,34,140,1) 0%,rgba(29,34,140,0.9) 25%,rgba(29,34,140,0.7) 50%,rgba(29,34,140,0.5) 75%,rgba(29,34,140,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(29,34,140,1) 0%,rgba(29,34,140,0.9) 25%,rgba(29,34,140,0.7) 50%,rgba(29,34,140,0.5) 75%,rgba(29,34,140,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+#advantages .wrapper .bg {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: -25px;
+  bottom: -60px;
+  opacity: 0.1;
+}
+#advantages .wrapper .picture-wrapper {
+  width: 100px;
+  height: 100%;
+  margin-right: 30px;
+}
+#advantages .wrapper .picture-wrapper .label {
+  font-size: 24px;
+  font-weight: bold;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8dffd5+0,1f56d3+100&1+0,1+100,0.3+100 */
+  background: -moz-linear-gradient(-49deg, rgba(141,255,213,1) 0%, rgba(31,86,211,0.3) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-49deg, rgba(141,255,213,1) 0%,rgba(31,86,211,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(139deg, rgba(141,255,213,1) 0%,rgba(31,86,211,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+#advantages .wrapper .text-wrapper {
+  width: 380px;
+  text-align: justify;
+}
+#advantages .wrapper .sectitle {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 60px;
+}
+#advantages .wrapper .description {
+  font-size: 20px;
+  line-height: 36px;
+}
+#advantages .wrapper:nth-child(1) .description {
+  line-height: 28px;
+}
+
+#platforms .content {
+  height: 620px;
+  top: -100px;
+}
+#platforms .content img {
+  width: 120px;
+}
+
+#modules .wrapper {
+  width: 280px;
+  height: 280px;
+  margin: -15px 5px;
+  position: relative;
+}
+#modules .wrapper >* {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#modules .wrapper .bg canvas {
+  transform: rotate(30deg);
+}
+#modules .wrapper .fg {
+  flex-direction: column;
+}
+#modules .wrapper .fg .icon {
+  width: 90px;
+  height: 90px;
+  background-size: contain;
+}
+#modules .wrapper .fg .label {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+}
+#modules .wrapper .fg .splitter {
+  width: 90px;
+  height: 1px;
+  background-color: #fff;
+}
+#modules .wrapper .fg .arrow {
+  margin-top: 6px;
+  border-top: solid 6px;
+  border-right: solid 6px transparent;
+  border-left: solid 6px transparent;
+}
+#modules .wrapper.center .fg .number {
+  font-size: 61px;
+  font-weight: bold;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e4138d+0,200ecd+100 */
+  background: -moz-linear-gradient(-49deg, #e4138d 0%, #200ecd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-49deg, #e4138d 0%,#200ecd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(139deg, #e4138d 0%,#200ecd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+#modules .wrapper.center .fg .description {
+  font-size: 18px;
+  height: 84px;
+  line-height: 24px;
+}
+#modules .wrapper.center .fg .description >:first-child {
+  position: relative;
+  top: -0.5em;
+}
+#modules .wrapper.center .fg .arrow {
+  margin-top: 20px;
+}
+
+#stages .content {
+  align-items: flex-start;  
+  counter-reset: stages;
+  background-image: url(../img/digimedia/stages_bg.bmp);
+  background-size: 2px 100%;
+}
+#stages .wrapper {
+  width: 580px;
+  margin: 80px 0;
+  color: #fff;
+  text-align: justify;
+  position: relative;
+}
+#stages .wrapper:nth-child(2n-1) {
+  direction: rtl;
+}
+#stages .wrapper:nth-child(2) {
+  top: 220px;
+}
+#stages .wrapper:nth-child(2n+4) {
+  top: 170px;
+}
+#stages .wrapper:nth-child(2n+8) {
+  top: 140px;
+}
+#stages .wrapper .text-wrapper {
+  padding: 0 40px;
+}
+#stages .wrapper .dot {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border: solid 3px #b201c2;
+  border-radius: 44px;
+}
+#stages .wrapper:nth-child(2n-1) .dot {
+  right: -22px;
+}
+#stages .wrapper:nth-child(2n) .dot {
+  left: -22px;
+}
+#stages .wrapper .dot >* {
+  border: solid 9px;
+  border-radius: 9px;
+}
+
+#stages .wrapper:nth-child(2n-1) .text-wrapper::before {
+  right: 40px;
+}
+#stages .wrapper:nth-child(2n) .text-wrapper::before {
+  left: 40px;
+}
+#stages .wrapper:nth-child(n+10) .text-wrapper::before {
+  content: counter(stages);
+}
+#stages .wrapper .text-wrapper .sectitle-bar {
+  display: inline-block;
+  height: 44px;
+  line-height: 40px;
+  background-color: #b201c2;
+  padding: 0 1em;
+  border-radius: 22px;
+}
+#stages .wrapper .text-wrapper .sectitle-bar >* {
+  margin: 0 5px;
+}
+#stages .wrapper .text-wrapper .sectitle-bar .sectitle {
+  display: inline-flex;
+  vertical-align: top;
+  font-size: 24px;
+  font-weight: bold;
+}
+#stages .wrapper .text-wrapper .sectitle-bar .icon {
+  vertical-align: middle;
+}
+#stages .wrapper .text-wrapper::before {
+  content: "0" counter(stages);
+  counter-increment: stages;
+  position: absolute;
+  bottom: 100%;
+  font-size: 92px;
+  font-weight: bold;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e4138d+0,200ecd+100 */
+  background: -moz-linear-gradient(-49deg, #e4138d 0%, #200ecd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-49deg, #e4138d 0%,#200ecd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(139deg, #e4138d 0%,#200ecd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+#stages .wrapper .text-wrapper .description {
+  font-size: 20px;
+  line-height: 36px;
+  text-align: justify;
+  direction: ltr;
+}
+#stages .wrapper:nth-child(2n-1) .text-wrapper .description {
+/*   text-align: right; */
+}
+#stages .wrapper .text-wrapper .description >* {
+  margin: 2em 0;
+}
+
+#comparisons .titles {
+  margin-bottom: 100px;
+}
+#comparisons .panel {
+  width: 1030px;
+}
+#comparisons .content {
+  position: relative;
+}
+#comparisons .sectitle {
+  width: 50%;
+  font-size: 30px;
+  line-height: 100px;
+  color: #444444;
+}
+#comparisons .sectitle:nth-child(1),
+#comparisons .wrapper:nth-child(3) {
+  width: 552px;
+}
+#comparisons .wrapper:nth-child(3) {
+  height: 364px;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,9d27ba+100 */
+  background: -moz-linear-gradient(45deg, #4233c2 0%, #9d27ba 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #4233c2 0%,#9d27ba 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #4233c2 0%,#9d27ba 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  box-shadow: 0px 0px 12px 0px rgba(7,73,169,49%);
+}
+#comparisons .sectitle:nth-child(2),
+#comparisons .wrapper:nth-child(4) {
+  width: 478px;
+}
+#comparisons .wrapper:nth-child(4) {
+  height: 327px;
+  background-color: #fff;
+  color: #b5b5b5;
+  text-decoration: line-through;
+}
+#comparisons .wrapper:nth-child(3) .description {
+  width: 450px;
+}
+#comparisons .wrapper:nth-child(4) .description {
+  width: 400px;
+}
+#comparisons .description >* {
+  font-size: 20px;
+  line-height: 43px;
+}
+#comparisons .wrapper:nth-child(3) .description >* {
+  border-bottom: dashed 1px rgba(255,255,255,0.4);
+}
+#comparisons .wrapper:nth-child(4) .description >* {
+  border-bottom: dashed 1px rgba(0,0,0,0.3);
+}
+#comparisons .vs {
+  position: absolute;
+  top: -21%;
+  left: 42%;
+}
+
+#environments .panel {
+  background-image: url(../img/digimedia/environments_bg.bmp);
+  background-size: 100% 260px;
+  background-position: 0 100%;
+  padding-bottom: 60px;
+}
+#environments .content {
+  width: 1080px;
+  margin: auto;
+  height: 560px;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+#FAQ .content {
+  height: 620px;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+#FAQ .description {
+  position: absolute;
+  font-size: 20px;
+  line-height: 44px;
+  padding: 0 1em;
+  background-color: #1d228c;
+  border-radius: 22px;
+  white-space: nowrap;
+}
+
+#enrollment .gesso {
+  height: 430px;
+  border: solid 5px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#900db1+0,2e14c7+100 */
+  border-image: -moz-linear-gradient(-48deg, #900db1 0%, #2e14c7 100%) 1 1; /* FF3.6-15 */
+  border-image: -webkit-linear-gradient(-48deg, #900db1 0%,#2e14c7 100%) 1 1; /* Chrome10-25,Safari5.1-6 */
+  border-image: linear-gradient(138deg, #900db1 0%,#2e14c7 100%) 1 1; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#enrollment .content {
+  width: 1160px;
+  padding: 0 10px;
+  height: 392px;
+  border: solid 2px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#900db1+0,2e14c7+100 */
+  border-image: -moz-linear-gradient(-48deg, #900db1 0%, #2e14c7 100%) 1 1; /* FF3.6-15 */
+  border-image: -webkit-linear-gradient(-48deg, #900db1 0%,#2e14c7 100%) 1 1; /* Chrome10-25,Safari5.1-6 */
+  border-image: linear-gradient(138deg, #900db1 0%,#2e14c7 100%) 1 1; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#enrollment .wrapper {
+  width: 50%;
+  padding-right: 20px;
+  height: 90px;
+  justify-content: flex-end;
+}
+#enrollment .wrapper .label {
+  font-size: 22px;
+}
+#enrollment .wrapper input {
+  width: 420px;
+  padding: 0 0.5em;
+  line-height: 40px;
+  font-size: 22px;
+  background-color: transparent;
+  color: #fff;
+  border: solid 2px;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#900db1+0,2e14c7+100 */
+  border-image: -moz-linear-gradient(-48deg, #900db1 0%, #2e14c7 100%) 1 1; /* FF3.6-15 */
+  border-image: -webkit-linear-gradient(-48deg, #900db1 0%,#2e14c7 100%) 1 1; /* Chrome10-25,Safari5.1-6 */
+  border-image: linear-gradient(138deg, #900db1 0%,#2e14c7 100%) 1 1; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+#enrollment .submit {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 48px;
+  padding: 0 2em;
+  
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+0,9d27ba+100 */
+  background: -moz-linear-gradient(-41deg, #2744f1 0%, #b40fba 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-41deg, #2744f1 0%,#b40fba 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(131deg, #2744f1 0%,#b40fba 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  
+  border-radius: 24px;
+  
+  box-shadow: 4px 6px 0px 0px #651ec0;
+}
+
+
+/* waypoints animation START */
+.center.frame .titles * {
+  transition: all .66s ease;
+}
+.center.frame .titles .decorator {
+  transition-delay: 0.33s;
+}
+.center.frame .titles.deactivated .title {
+  transform: scale(0);
+}
+.center.frame .titles.deactivated .decorator:nth-child(1) {
+  transform: translateX(-100vw);
+}
+.center.frame .titles.deactivated .decorator:nth-child(3) {
+  transform: translateX(100vw);
+}
+
+#intro .content .description {
+  transition: all 1s ease;
+}
+#intro .content.deactivated .description {
+  transform: translateY(50vh);
+  opacity: 0;
+}
+
+#advantages .content,
+#advantages .content .wrapper{
+  transition: all 1s ease;
+}
+#advantages .content.deactivated {
+  transform: translateX(-610px);
+}
+#advantages .content.deactivated .wrapper {
+  opacity: 0;
+}
+#advantages .content.deactivated .wrapper:nth-child(2n) {
+  transform: translateX(-610px);
+}
+
+#modules .content .wrapper {
+  transition: all 1s ease;
+}
+#modules .content.deactivated .wrapper {
+  opacity: 0;
+}
+
+#stages .content .wrapper >* {
+  transition: all .66s cubic-bezier(0.165, 0.84, 0.44, 1);;
+}
+#stages .content .wrapper .text-wrapper {
+  transition-delay: .66s;
+}
+#stages .content .wrapper.deactivated >* {
+   opacity: 0;
+}
+#stages .wrapper:nth-child(2n-1) .text-wrapper {
+  transform-origin: right;
+}
+#stages .wrapper:nth-child(2n) .text-wrapper {
+  transform-origin: left;
+}
+#stages .content .wrapper.deactivated .text-wrapper {
+  transform: perspective(580px) rotateY(-45deg);
+}
+
+#comparisons .content >* {
+  transition: all 1s ease;
+}
+#comparisons .content.deactivated >* {
+  opacity: 0;
+}
+#comparisons .content.deactivated >:nth-child(2n-1) {
+  transform: translateX(-100vw);
+}
+#comparisons .content.deactivated >:nth-child(2n) {
+  transform: translateX(100vw);
+}
+#comparisons .content .vs {
+  transition-delay: 1s;
+}
+#comparisons .content.deactivated .vs {
+  transform: scale(10);
+}
+
+#environments .content >* {
+  transition: all 1s ease;
+}
+#environments .content.deactivated {
+  opacity: 0;
+}
+#environments .content.deactivated >:nth-child(-n+2) {
+  transform: translateX(-100vw)
+}
+#environments .content.deactivated >:nth-child(n+3) {
+  transform: translateX(100vw)
+}
+
+#FAQ .content .description {
+  transition: all 1s ease;
+}
+#FAQ .content.deactivated .description {
+  opacity: 0;
+}
+/* waypoints animation END */

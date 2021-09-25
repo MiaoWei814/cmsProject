@@ -1,0 +1,110 @@
+.center.frame {
+  letter-spacing: 0em;
+  text-indent: 0em;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+
+
+#counter.minority {
+  flex-wrap: nowrap;
+  padding: 30px 0;
+}
+#counter.minority .text-wrapper {
+  width: 33.3333%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+#counter.minority .text-wrapper:hover {
+  color: #f8b300;
+}
+#counter.minority .text-wrapper [b] {
+  font-size: 16px;
+  font-weight: bold;
+}
+#counter.minority .splitter {
+  flex-shrink: 0;
+  width: 1px;
+  height: 40px;
+  background-color: #bdbdbd;
+}
+
+
+
+#articles.majority .content {
+  text-align: justify;
+  justify-content: space-between;
+}
+#articles.majority .content::after {
+  content: "";
+  flex-grow: 1;
+  max-width: 240px;
+}
+#articles.majority .wrapper {
+  width: 240px;
+  height: 245px;
+  margin-top: 15px;
+}
+#articles.majority .wrapper .photo-wrapper {
+  width: inherit;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+#articles.majority .wrapper .photo-wrapper >* {
+  width: inherit;
+  position: absolute;
+}
+#articles.majority .wrapper .photo-wrapper .photo {
+  height: inherit;
+}
+#articles.majority .wrapper .photo-wrapper .brief {
+  bottom: -75px;
+  height: 75px;
+  padding: 0 0.5em;
+  font-size: 12px;
+  line-height: 20px;
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  transition: bottom 0.1s ease;
+}
+#articles.majority .wrapper .text-wrapper >* {
+  max-width: 100%;
+  margin: 10px 0;
+  font-size: 12px;
+  color: #959595;
+}
+#articles.majority .wrapper .text-wrapper .sectitle {
+  font-size: 16px;
+  color: #3E3E3E;
+}
+#articles.majority .wrapper .text-wrapper .name {
+  color: #5F5F5F;
+  background-image: url(../img/common-icons_people_gray.png);
+  background-position: left;
+  padding-left: 1.1em;
+}
+#articles.majority .wrapper .text-wrapper .class {
+  margin-left: 1em;
+}
+#articles.majority .wrapper .text-wrapper .class::before {
+  display: inline-block;
+  content: "";
+  width: 1px;
+  height: 10px;
+  background-color: currentColor;
+  margin-right: 1em;
+  transform: translateY(1px);
+}
+#articles.majority .wrapper.activated .photo-wrapper .brief {
+  bottom: 0px;
+}
+#articles.majority .wrapper.activated .text-wrapper .sectitle {
+  color: #f8b300;
+}

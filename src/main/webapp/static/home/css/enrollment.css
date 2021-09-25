@@ -1,0 +1,114 @@
+.center.frame {
+  letter-spacing: 0;
+  text-indent: 0;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+#enrollment {
+  text-align: justify;
+  background-color: #fff;
+  padding: 20px 30px 20px 20px;
+  counter-reset: enrollment;
+  font-size: 16px;
+}
+#enrollment >dl {
+  margin: 0;
+}
+#enrollment >dl >dt {
+  width: 286px;
+  line-height: 34px;
+  font-size: 22px;
+  font-weight: bold;
+  background-image: url(../img/enrollment/enrollment_dt_bg.png);
+  color: #fff;
+}
+#enrollment >dl >dt::before {
+  content: "0" counter(enrollment);
+  counter-increment: enrollment;
+  letter-spacing: 0.1em;
+  margin-left: 0.75em;
+  margin-right: 0.5em;
+}
+#enrollment >dl >dd {
+  margin: 20px 0 20px 60px;
+  line-height: 26px;
+}
+#enrollment >dl >dd img {
+  display: block;
+  margin: 20px auto;
+}
+#enrollment >dl >dd >dl {
+  counter-reset: enrollment;
+}
+#enrollment >dl >dd >dl >dt {
+  font-size: 14px;
+}
+#enrollment >dl >dd >dl >dt::before {
+  content: "\FF08" counter(enrollment) "\FF09";
+  counter-increment: enrollment;
+}
+#enrollment >dl >dd:nth-of-type(2) {
+  width: 1116px;
+  justify-content: space-between;
+}
+#enrollment >dl >dd:nth-of-type(2) img {
+  transform: translateX(-15px);
+  margin: 10px auto;
+}
+#enrollment >dl >dd:nth-of-type(3) .note {
+  font-weight: bold;
+  color: #317EDE;
+}
+#enrollment >dl >dd:nth-of-type(3) .consult {
+  width: 250px;
+  margin: -20px auto 0;
+  line-height: 40px;
+  text-align: center;
+  background-color: #3E8AE6;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-indent: 0.1em;
+}
+
+#enroll {
+  border: double 7px #000;
+  height: 235px;
+  position: relative;
+}
+#enroll .wrapper,
+#enroll .submit {
+  margin: 10px 50px;
+  text-align: center;
+}
+#enroll .wrapper input {
+  width: 284px;
+  line-height: 36px;
+  font-size: 14px;
+  padding: 0 0.5em;
+  border: solid 1px #999;
+  border-radius: 7px;
+  text-indent: 1.25em;
+  background-position: 5px center;
+}
+#enroll .note {
+  position: absolute;
+  font-size: 14px;
+  right: 0.75em;
+  bottom: 0.25em;
+}
+#enroll .submit {
+  width: 250px;
+  margin-top: 20px;
+  line-height: 40px;
+  background-color: #3E8AE6;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-indent: 0.1em;
+}

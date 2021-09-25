@@ -1,0 +1,102 @@
+#banner {
+  height: 350px;
+}
+
+#feedback option,
+#feedback input,
+#feedback textarea{
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  
+  font-size: 12px;
+  border: solid 1px #e5e5e5;
+  resize: none;
+  padding: 0 5px;
+}
+#feedback input{
+  line-height: 35px;
+  width: 550px;  
+    color: #9c9c9c;
+}
+#feedback textarea{
+  line-height: 30px;
+  width: 1130px;
+  height: 156px;
+    color: #9c9c9c;
+  font-family: inherit;
+}
+#feedback input,
+#feedback textarea{
+	transition: all 150ms ease-in-out;
+}
+#feedback input:hover,
+#feedback textarea:hover{
+	box-shadow: 0 0 5px rgba(0,0,0,.15);
+}
+#feedback input.focus,
+#feedback textarea.focus{
+	box-shadow: 0 0 5px rgba(51,102,248,.4);
+}
+
+
+
+#feedback .content {
+  padding: 10px 30px;
+  background-color: #fff;
+  text-align: left;
+  border-radius: 5px;
+}
+
+#feedback dt {
+  font-size: 16px;
+  color: #3e3e3e;
+  height: 40px;
+  line-height: 50px;
+}
+#feedback dt .highlighted {
+  color: red;
+}
+#feedback dd {
+  margin-left: 0;
+}
+#feedback ul {
+  padding-left: 0;
+}
+
+#feedback #cfg {
+  width: 320px;
+  justify-content: space-between;
+}
+#feedback #cfg input {
+  width: 100px;
+}
+#feedback #cfg img {
+  width: 120px;
+  height: 30px
+}
+#feedback #submit {
+  width: 140px;
+  height: 30px;
+  margin-bottom: 100px;
+  border: none;
+  color: #fff;
+  background-color: #FFBA00;
+}
+
+#easyDropDown .dropdown{
+  border: solid 1px #e5e5e5;
+  border-radius: 0;
+}
+#easyDropDown .dropdown .selected{
+  font-size: 14px;
+}
+#easyDropDown .dropdown li{
+  font-size: 12px;
+}
+#easyDropDown .dropdown li.active{
+  background-color: #ffb700;
+  color: white;
+}
+#easyDropDown .dropdown li.focus{
+  background-color: #ffb700;
+}

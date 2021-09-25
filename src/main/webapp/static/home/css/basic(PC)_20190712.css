@@ -1,0 +1,62 @@
+/* basic module for "itsource.cn"(PC) START */
+/* @version 20190712 */
+
+body {
+	font-family: "Source Han Sans CN";
+	color: #333;
+	letter-spacing: 0.1em;
+	text-indent: 0.1em;
+}
+.container {
+	max-width: 1920px;
+	min-width: 1200px;
+}
+.panel {
+	width: 1200px;
+}
+.center.frame {
+	background-color: #f6f6f6;
+}
+.center.frame .panel,
+.center.frame .panel .content {
+	margin: 20px auto;
+}
+.center.frame .title-bar {
+	height: 70px;
+	padding-bottom: 2px;
+	justify-content: flex-start;
+	align-content: flex-end;
+	align-items: flex-end;
+}
+.center.frame .title-bar .title {
+	font-size: 28px;
+	font-weight: bold;
+}
+.center.frame .title-bar .subtitle {
+	font-size: 16px;
+	margin-left: 1em;
+}
+
+[font="sans-exlight"] {
+	font-family: "SourceHanSans-ExtraLight";
+}
+[font="sans-light"] {
+	font-family: "SourceHanSans-Light";
+}
+[font="sans-normal"] {
+	font-family: "SourceHanSans-Normal";
+}
+[font="sans-regular"] {
+	font-family: "SourceHanSans-Regular";
+}
+[font="sans-medium"] {
+	font-family: "SourceHanSans-Medium";
+}
+[font="sans-bold"] {
+	font-family: "SourceHanSans-Bold";
+}
+[font="sans-heavy"] {
+	font-family: "SourceHanSans-Heavy";
+}
+
+/* basic module for "itsource.cn"(PC) END */

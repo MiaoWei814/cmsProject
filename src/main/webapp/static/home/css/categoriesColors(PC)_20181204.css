@@ -1,0 +1,45 @@
+/* categoriesColors module for "itsource.cn"(PC) START */
+/* @version 20181204 */
+
+[category=python].useCategoryThemeColorAsTextColor,
+[category=python] .useCategoryThemeColorAsTextColor {
+  color: rgb(101, 147, 234);
+}
+[category=python].useCategoryThemeColorAsBackgroundColor,
+[category=python] .useCategoryThemeColorAsBackgroundColor {
+  background-color: rgb(101, 147, 234);
+}
+[category=java].useCategoryThemeColorAsTextColor,
+[category=java] .useCategoryThemeColorAsTextColor {
+  color: rgb(74, 200, 232);
+}
+[category=java].useCategoryThemeColorAsBackgroundColor,
+[category=java] .useCategoryThemeColorAsBackgroundColor {
+  background-color: rgb(74, 200, 232);
+}
+[category=php].useCategoryThemeColorAsTextColor,
+[category=php] .useCategoryThemeColorAsTextColor {
+  color: rgb(108, 87, 214);
+}
+[category=php].useCategoryThemeColorAsBackgroundColor,
+[category=php] .useCategoryThemeColorAsBackgroundColor {
+  background-color: rgb(108, 87, 214);
+}
+[category=ui].useCategoryThemeColorAsTextColor,
+[category=ui] .useCategoryThemeColorAsTextColor {
+  color: rgb(245, 61, 62);
+}
+[category=ui].useCategoryThemeColorAsBackgroundColor,
+[category=ui] .useCategoryThemeColorAsBackgroundColor {
+  background-color: rgb(245, 61, 62);
+}
+[category=h5].useCategoryThemeColorAsTextColor,
+[category=h5] .useCategoryThemeColorAsTextColor {
+  color: rgb(36, 178, 179);
+}
+[category=h5].useCategoryThemeColorAsBackgroundColor,
+[category=h5] .useCategoryThemeColorAsBackgroundColor {
+  background-color: rgb(36, 178, 179);
+}
+
+/* categoriesColors module for "itsource.cn"(PC) END */

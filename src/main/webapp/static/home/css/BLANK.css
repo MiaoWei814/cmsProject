@@ -1,0 +1,142 @@
+#fonts {
+	text-align: left;
+}
+
+@font-face {
+	font-family: "SourceHanSans-ExtraLight";
+	src: url("fonts/SourceHanSans-ExtraLight.otf");
+}
+.sans-exlight {
+	font-family: "SourceHanSans-ExtraLight"
+}
+.sans-exlight::before {
+	content: "SourceHanSans-ExtraLight";
+}
+
+@font-face {
+	font-family: "SourceHanSans-Light";
+	src: url("fonts/SourceHanSans-Light.otf");
+}
+.sans-light {
+	font-family: "SourceHanSans-Light"
+}
+.sans-light::before {
+	content: "SourceHanSans-Light";
+}
+
+@font-face {
+	font-family: "SourceHanSans-Normal";
+	src: url("fonts/SourceHanSans-Normal.otf");
+}
+.sans-normal {
+	font-family: "SourceHanSans-Normal"
+}
+.sans-normal::before {
+	content: "SourceHanSans-Normal";
+}
+
+@font-face {
+	font-family: "SourceHanSans-Regular";
+	src: url("fonts/SourceHanSans-Regular.otf");
+}
+.sans-regular {
+	font-family: "SourceHanSans-Regular";
+}
+.sans-regular::before {
+	content: "SourceHanSans-Regular";
+}
+
+@font-face {
+	font-family: "SourceHanSans-Medium";
+	src: url("fonts/SourceHanSans-Medium.otf");
+}
+.sans-medium {
+	font-family: "SourceHanSans-Medium";
+}
+.sans-medium::before {
+	content: "SourceHanSans-Medium";
+}
+
+@font-face {
+	font-family: "SourceHanSans-Bold";
+	src: url("fonts/SourceHanSans-Bold.otf");
+}
+.sans-bold {
+	font-family: "SourceHanSans-Bold";
+}
+.sans-bold::before {
+	content: "SourceHanSans-Bold";
+}
+
+@font-face {
+	font-family: "SourceHanSans-Heavy";
+	src: url("fonts/SourceHanSans-Heavy.otf");
+}
+.sans-heavy {
+	font-family: "SourceHanSans-Heavy";
+}
+.sans-heavy::before {
+	content: "SourceHanSans-Heavy";
+}
+
+
+.non-sans-exlight {
+	font-family: "Microsoft Jhenghei";
+	-webkit-text-stroke: 0.005em #fff;
+}
+.non-sans-exlight::before {
+	content: "Microsoft Jhenghei";
+  	-webkit-text-stroke: 0.005em #fff;
+}
+
+.non-sans-light {
+	font-family: "Microsoft Jhenghei";
+}
+.non-sans-light::before {
+	content: "Microsoft Jhenghei";
+}
+
+.non-sans-normal {
+	font-family: "Microsoft Yahei";
+}
+.non-sans-normal::before {
+	content: "Microsoft Yahei";
+}
+
+.non-sans-regular {
+	font-family: "Microsoft Yahei";
+	-webkit-text-stroke: 0.001em;
+}
+.non-sans-regular::before {
+	content: "Microsoft Yahei";
+	-webkit-text-stroke: 0.001em;
+}
+
+.non-sans-medium {
+	font-family: "Microsoft Jhenghei";
+	font-weight: bold;
+}
+.non-sans-medium::before {
+	content: "Microsoft Jhenghei";
+	font-weight: bold;
+}
+
+.non-sans-bold {
+	font-family: "Microsoft Yahei";
+	font-weight: bold;
+	-webkit-text-stroke: 0.005em #fff;
+}
+.non-sans-bold::before {
+	content: "Microsoft Yahei";
+	font-weight: bold;
+	-webkit-text-stroke: 0.005em #fff;
+}
+
+.non-sans-heavy {
+	font-family: "Microsoft Yahei";
+	font-weight: bold;
+}
+.non-sans-heavy::before {
+	content: "Microsoft Yahei";
+	font-weight: bold;
+}

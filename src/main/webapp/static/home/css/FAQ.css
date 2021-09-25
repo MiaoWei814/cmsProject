@@ -1,0 +1,65 @@
+.center.frame {
+  letter-spacing: 0em;
+  text-indent: 0em;
+}
+
+
+
+#banner {
+  height: 350px;
+}
+
+
+
+#FAQ {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#FAQ .title {
+  font-size: 26px;
+  height: 26px;
+  line-height: 22px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-indent: 0.1em;
+}
+#FAQ >dl {
+  text-align: justify;
+  counter-reset: faq;
+}
+#FAQ >dl >dt {
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f8b300;
+}
+#FAQ >dl >dt::before {
+  content: counter(faq);
+  counter-increment: faq;
+  background-color: #f8b300;
+  color: #fff;
+  padding: 0 0.1em;
+  margin-right: 0.5em;
+  border-radius: 2px;
+}
+#FAQ >dl >dt:nth-of-type(-n+9)::before {
+  content: "0" counter(faq);
+}
+#FAQ >dl >dd {
+  font-size: 14px;
+  line-height: 24px;
+  margin-left: 30px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+}
+#FAQ >dl >dd >dl {
+  counter-reset: faq;
+}
+#FAQ >dl >dd >dl >dt::before {
+  content: counter(faq) "\3001";
+  counter-increment: faq;
+}
+#FAQ >dl >dd >dl >dd {
+  margin-left: 22px;
+}
