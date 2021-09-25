@@ -7,6 +7,7 @@ import org.learn.domain.vo.QueryUserVo;
 import org.learn.util.AjaxResult;
 import org.learn.util.PageBean;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -24,9 +25,10 @@ public interface ITUserService
      * @param login 登录
      * @param session
      * @param response
+     * @param request
      * @return {@link AjaxResult}
      */
-    AjaxResult startLogin(LoginUserDto login, HttpSession session, HttpServletResponse response) throws Exception;
+    AjaxResult startLogin(LoginUserDto login, HttpSession session, HttpServletResponse response, HttpServletRequest request) throws Exception;
 
     /**
      * 查询所有

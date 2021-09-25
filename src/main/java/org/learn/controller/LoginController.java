@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -47,8 +48,8 @@ public class LoginController {
      */
     @RequestMapping("/startLogin")
     @ResponseBody
-    public AjaxResult startLogin(LoginUserDto login, HttpSession session, HttpServletResponse response) throws Exception{
-        return userService.startLogin(login, session, response);
+    public AjaxResult startLogin(LoginUserDto login, HttpSession session, HttpServletRequest request,HttpServletResponse response) throws Exception{
+        return userService.startLogin(login, session, response, request);
     }
 
 }

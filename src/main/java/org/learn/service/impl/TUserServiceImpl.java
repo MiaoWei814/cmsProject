@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.net.URLDecoder;
@@ -40,10 +41,11 @@ public class TUserServiceImpl implements ITUserService {
      * @param login    登录
      * @param session
      * @param response
+     * @param request
      * @return {@link AjaxResult}
      */
     @Override
-    public AjaxResult startLogin(LoginUserDto login, HttpSession session, HttpServletResponse response) throws Exception {
+    public AjaxResult startLogin(LoginUserDto login, HttpSession session, HttpServletResponse response, HttpServletRequest request) throws Exception {
         List<TUser> users;
         try {
             //数据校验
@@ -75,6 +77,17 @@ public class TUserServiceImpl implements ITUserService {
             //响应
             response.addCookie(cookieUserName);
             response.addCookie(cookiePassword);
+        }else{
+            //清除cookie
+            Cookie[] cookies = request.getCookies();
+            for (Cookie cookie : cookies) {
+                String name = cookie.getName();
+                if ("username".equals(name) || "password".equals(name)) {
+                    cookie.setPath("/");
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
         }
         //登录成功就把信息放在session里面
         session.setAttribute(Constant.USER_SESSION_KEY, users.get(0));
