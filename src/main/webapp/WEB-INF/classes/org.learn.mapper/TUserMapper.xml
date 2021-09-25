@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.learn.mapper.TUserMapper">
+
+    <resultMap type="TUser" id="TUserResult">
+        <result property="id"    column="id"    />
+        <result property="username"    column="username"    />
+        <result property="password"    column="password"    />
+        <result property="nickName"    column="nickName"    />
+    </resultMap>
+
+    <sql id="selectTUserVo">
+        select id, username, password, nickName from t_user
+    </sql>
+
+    <select id="selectTUserList" parameterType="TUser" resultMap="TUserResult">
+        <include refid="selectTUserVo"/>
+        <where>
+            <if test="username != null  and username != ''"> and username like concat('%', #{username}, '%')</if>
+            <if test="password != null  and password != ''"> and password = #{password}</if>
+            <if test="nickName != null  and nickName != ''"> and nickName like concat('%', #{nickName}, '%')</if>
+        </where>
+    </select>
+
+    <select id="selectTUserById" parameterType="Long" resultMap="TUserResult">
+        <include refid="selectTUserVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTUser" parameterType="TUser" useGeneratedKeys="true" keyProperty="id">
+        insert into t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">username,</if>
+            <if test="password != null">password,</if>
+            <if test="nickName != null">nickName,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">#{username},</if>
+            <if test="password != null">#{password},</if>
+            <if test="nickName != null">#{nickName},</if>
+        </trim>
+    </insert>
+
+    <update id="updateTUser" parameterType="TUser">
+        update t_user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="username != null">username = #{username},</if>
+            <if test="password != null">password = #{password},</if>
+            <if test="nickName != null">nickName = #{nickName},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTUserById" parameterType="Long">
+        delete from t_user where id = #{id}
+    </delete>
+
+    <delete id="deleteTUserByIds" parameterType="String">
+        delete from t_user where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectUserAll" resultType="org.learn.domain.vo.QueryUserVo">
+        select *
+        from t_user
+        <where>
+            <if test="username !=null and username!=''">
+                username like concat('%',#{username},'%')
+            </if>
+        </where>
+        <if test="currentPage!=null and pageSize!=null">
+            limit #{startPage},#{pageSize}
+        </if>
+    </select>
+</mapper>
