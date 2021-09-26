@@ -48,9 +48,9 @@
             </a>
         </li>
         <li>
-            <a class="app-menu__item" href="${pageContext.request.contextPath}/system/feedbacks/index">
+            <a class="app-menu__item" href="${pageContext.request.contextPath}/system/feedback/index">
                 <i class="app-menu__icon fa fa-dashboard"></i>
-                <span class="app-menu__label">好评如潮管理</span>
+                <span class="app-menu__label">问题反馈管理</span>
             </a>
         </li>
     </ul>
