@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.learn.mapper.FaqMapper">
+
+    <resultMap type="Faq" id="FaqResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="content"    column="content"    />
+        <result property="createDate"    column="createDate"    />
+    </resultMap>
+
+    <sql id="selectFaqVo">
+        select id, title, content, createDate from faq
+    </sql>
+
+    <select id="selectFaqList" parameterType="Faq" resultMap="FaqResult">
+        <include refid="selectFaqVo"/>
+        <where>
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="createDate != null "> and createDate = #{createDate}</if>
+        </where>
+    </select>
+
+    <select id="selectFaqById" parameterType="Long" resultMap="FaqResult">
+        <include refid="selectFaqVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertFaq" parameterType="Faq" useGeneratedKeys="true" keyProperty="id">
+        insert into faq
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+            <if test="createDate != null">createDate,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">#{title},</if>
+            <if test="content != null">#{content},</if>
+            <if test="createDate != null">#{createDate},</if>
+        </trim>
+    </insert>
+
+    <update id="updateFaq" parameterType="Faq">
+        update faq
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="createDate != null">createDate = #{createDate},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteFaqById" parameterType="Long">
+        delete from faq where id = #{id}
+    </delete>
+
+    <delete id="deleteFaqByIds" parameterType="String">
+        delete from faq where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="queryPage" resultType="org.learn.domain.Faq">
+        select
+            id, title, content, createDate
+        from
+            faq
+        <where>
+            <if test="title!=null and title!=''">
+                title like concat('%',#{title},'%')
+            </if>
+        </where>
+        order by id desc
+        <if test="currentPage!=null and pageSize!=null">
+            limit #{startPage},#{pageSize}
+        </if>
+    </select>
+</mapper>

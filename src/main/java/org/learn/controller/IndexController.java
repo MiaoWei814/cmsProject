@@ -3,6 +3,7 @@ package org.learn.controller;
 import org.learn.domain.Slide;
 import org.learn.domain.vo.ArticleSortsVo;
 import org.learn.service.IArticleService;
+import org.learn.service.IFaqService;
 import org.learn.service.ISlideService;
 import org.learn.service.ITNavigationBarService;
 import org.learn.util.AjaxResult;
@@ -29,6 +30,8 @@ public class IndexController {
     private IArticleService articleService;
     @Autowired
     private ITNavigationBarService NavigationBarService;
+    @Autowired
+    private IFaqService faqService;
 
     /**
      * 找到所有轮播图
@@ -61,9 +64,26 @@ public class IndexController {
         return articleService.articleBrowseCount(id);
     }
 
+    /**
+     * 导航
+     *
+     * @return {@link AjaxResult}
+     */
     @RequestMapping("/Navigation")
     @ResponseBody
     public AjaxResult navigation(){
         return NavigationBarService.navigationList();
     }
+    /**
+     * 首页常见问题
+     *
+     * @return {@link AjaxResult}
+     */
+    @RequestMapping("/problem")
+    @ResponseBody
+    public AjaxResult commonProblem(){
+        return faqService.indexQueryList();
+    }
+
+
 }
