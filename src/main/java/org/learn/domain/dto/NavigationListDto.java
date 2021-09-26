@@ -1,39 +1,30 @@
-package org.learn.domain;
+package org.learn.domain.dto;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.learn.util.BasePage;
 
 import java.util.Date;
 
+/**
+ * 导航列表dto
+ *
+ * @author MiaoDaWei
+ * @date 2021/09/26
+ */
 @Data
 @Accessors(chain = true)
-public class TNavigationBar {
+public class NavigationListDto extends BasePage {
     private static final long serialVersionUID = 1L;
-
     /**
-     * id
+     * id-保存的时候用
      */
-    private Long id;
+    private Integer id;
 
     /**
      * 名称
      */
     private String name;
-
-    /**
-     * 路径
-     */
-    private String url;
-
-    /**
-     * 图标
-     */
-    private String icon;
-
-    /**
-     * 创建时间
-     */
-    private Date createDate = new Date();
 
     /**
      * 类型id

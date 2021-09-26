@@ -1,13 +1,12 @@
-package org.learn.domain;
+package org.learn.domain.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import lombok.experimental.Accessors;
 
 import java.util.Date;
 
 @Data
-@Accessors(chain = true)
-public class TNavigationBar {
+public class TNavigationBarQueryListVo {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -25,18 +24,15 @@ public class TNavigationBar {
      */
     private String url;
 
-    /**
-     * 图标
-     */
-    private String icon;
 
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date createDate = new Date();
 
     /**
-     * 类型id
+     * 类型
      */
-    private Long typeId;
+    private String typeName;
 }

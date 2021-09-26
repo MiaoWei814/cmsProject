@@ -29,5 +29,11 @@
                 <span class="app-menu__label">用户管理</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item" href="${pageContext.request.contextPath}/system/navigation/index">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">导航栏管理</span>
+            </a>
+        </li>
     </ul>
 </aside>

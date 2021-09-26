@@ -32,4 +32,12 @@
     </bean>
     <!--5.service交给spring管理,service注册到spring-->
     <context:component-scan base-package="org.learn.service"/>
+
+    <!-- 6.excel导出：  视图 走的页面，使用的视图解析器 -->
+    <!-- 扫描easypoi的一些view:视图 -->
+    <context:component-scan base-package="cn.afterturn.easypoi.view" />
+    <!-- bean的视图解析器  p:order="0":顺序在最前面 -->
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"   >
+        <property name="order" value="0"/>
+    </bean>
 </beans>

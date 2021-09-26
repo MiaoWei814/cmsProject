@@ -57,50 +57,61 @@
         </div>
     </div>
     <div class="panel flex-box">
-        <div class="links flex-box"><a target="_blank" href="index.html" class="activated">
-            <div class="text">首页</div>
-        </a><a target="_blank" href="courseWeb.html" id="categories-menu-trigger">
-            <div class="text">课程中心</div>
-        </a><a target="_blank" href="public-classes.html">
-            <div class="text">免费公开课</div>
-        </a><a target="_blank" href="videos.html">
-            <div class="text">视频教程</div>
-        </a><a target="_blank" href="teachers.html">
-            <div class="text">师资团队</div>
-        </a><a target="_blank" href="works.html">
-            <div class="text">学员作品</div>
-        </a><a target="_blank" href="alumns.html">
-            <div class="text">明星学员</div>
-        </a><a target="_blank" href="enroll.html">
-            <div class="text">报名流程</div>
-        </a><a target="_blank" href=".html">
-            <div class="text">源码社区</div>
-        </a></div>
+        <div class="links flex-box" id="top">
+            <!--添加-->
+        </div>
     </div>
-    <div id="categories-menu" class="flex-box deactivated"><a class="flex-box" category="java" target="_blank" href="">
-        <div class="text">Java学科</div>
-    </a><a class="flex-box" category="python" target="_blank" href="">
-        <div class="text">Python+人工智能学科</div>
-    </a><a class="flex-box" category="h5" target="_blank" href="">
-        <div class="text">H5前端学科</div>
-    </a><a class="flex-box" category="ui" target="_blank" href="">
-        <div class="text">UI设计学科</div>
-    </a><a class="flex-box" category="software-test" target="_blank" href="">
-        <div class="text">软件测试学科</div>
-    </a><a class="flex-box" category="php" target="_blank" href="">
-        <div class="text">PHP学科</div>
-    </a><a class="flex-box" category="bigdata" target="_blank" href="">
-        <div class="text">大数据学科</div>
-    </a></div>
+    <div id="categories-menu" class="flex-box deactivated">
+        <!--侧边栏-->
+    </div>
 </div>
 <script>
     $("#categories-menu-trigger").remove();
-    $("#categories-menu [category]").each(function () {
-        $(this).prepend('<div class="icon" style="background-image: url(/static/home/img/index/category_' + $(this).attr("category") + '_icon.png);"></div>');
-    });
+    // $("#categories-menu [category]").each(function () {
+    //     $(this).prepend('<div class="icon" style="background-image: url(/static/home/img/index/category_' + $(this).attr("category") + '_icon.png);"></div>');
+    // });
     $("#categories-menu").wrap('<div id="categories-menu-wrapper">');
     $("#header_navigator .links").before($("#categories-menu-wrapper"));
     $("#categories-menu").fadeIn(1);
+
+    $(function (){
+        $.ajax({
+            type:"get",
+            url:"/client/Navigation",
+            success : function(data) {
+                if (data.code===200) {
+                    /*循环顶部导航*/
+                    $(data.data.topNavigation).each(function(index,obj) {
+                        if (index === 0) {
+                            $("#top").append(
+                                ' <a target="_blank" href="index.html" class="activated">\n' +
+                                '     <div class="text">'+obj+'</div>\n' +
+                                ' </a>')
+                        }else if (index === 1) {
+                            $("#top").append(
+                                ' </a><a target="_blank" href="courseWeb.html" id="categories-menu-trigger">\n' +
+                                '            <div class="text">'+obj+'</div>\n' +
+                                ' </a>')
+                        }else {
+                            $("#top").append('' +
+                                '</a><a target="_blank" href=".html">\n' +
+                                '            <div class="text">'+obj+'</div>\n' +
+                                '</a>')
+                        }
+                    })
+                    /*循环侧边*/
+                    $(data.data.sidebar).each(function(index,obj) {
+                        $("#categories-menu").append('' +
+                            '<a class="flex-box" category="bigdata" target="_blank" href="">\n' +
+                            '<div class="icon" style="background-image: url('+obj.url+');"></div>\n'+
+                            '        <div class="text">'+obj.name+'</div>\n' +
+                            '</a>')
+                    })
+
+                }
+            }
+        })
+    })
 </script>
 <div class="frame center">
     <div class="container swiper-container" id="banner">

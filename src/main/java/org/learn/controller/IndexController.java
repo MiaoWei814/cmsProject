@@ -4,6 +4,7 @@ import org.learn.domain.Slide;
 import org.learn.domain.vo.ArticleSortsVo;
 import org.learn.service.IArticleService;
 import org.learn.service.ISlideService;
+import org.learn.service.ITNavigationBarService;
 import org.learn.util.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,6 +27,8 @@ public class IndexController {
     private ISlideService slideService;
     @Autowired
     private IArticleService articleService;
+    @Autowired
+    private ITNavigationBarService NavigationBarService;
 
     /**
      * 找到所有轮播图
@@ -56,5 +59,11 @@ public class IndexController {
     @ResponseBody
     public AjaxResult viewCount(@RequestParam Long id) {
         return articleService.articleBrowseCount(id);
+    }
+
+    @RequestMapping("/Navigation")
+    @ResponseBody
+    public AjaxResult navigation(){
+        return NavigationBarService.navigationList();
     }
 }

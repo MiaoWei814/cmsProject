@@ -20,4 +20,9 @@ public interface Constant {
      * 最小密码长度
      */
     Integer MIN_PASSWORD_LENGTH = 3;
+
+    /**
+     * 首页导航数量限制
+     */
+    Integer NAX_INDEX_NAVIGATION = 8;
 }

@@ -1,6 +1,7 @@
 package org.learn.service;
 
 import org.learn.domain.TNavigationBar;
+import org.learn.util.AjaxResult;
 
 import java.util.List;
 
@@ -53,4 +54,12 @@ public interface ITNavigationBarService
      * @return 结果
      */
     public int deleteTNavigationBarById(Long id);
+
+    /**
+     * 导航列表
+     *
+     * @return {@link AjaxResult}
+     */
+    AjaxResult navigationList();
+
 }

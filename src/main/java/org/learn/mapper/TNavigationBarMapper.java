@@ -1,6 +1,8 @@
 package org.learn.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.learn.domain.TNavigationBar;
+import org.learn.domain.vo.IndexNavigationListSideVo;
 
 import java.util.List;
 
@@ -53,4 +55,22 @@ public interface TNavigationBarMapper
      * @return 结果
      */
     public int deleteTNavigationBarByIds(Long[] ids);
+
+    /**
+     * 选择顶部导航列表
+     *
+     * @param typeId 类型id
+     * @param naxIndexNavigation
+     * @return {@link List}<{@link String}>
+     */
+    List<String> selectTopNavigationList(@Param("typeId") Integer typeId,@Param("limitCount") Integer naxIndexNavigation);
+
+    /**
+     * 选择侧导航列表
+     *
+     * @param typeId             类型id
+     * @param naxIndexNavigation nax指数导航
+     * @return {@link List}<{@link IndexNavigationListSideVo}>
+     */
+    List<IndexNavigationListSideVo> selectSideNavigationList(@Param("typeId") Integer typeId,@Param("limitCount") Integer naxIndexNavigation);
 }

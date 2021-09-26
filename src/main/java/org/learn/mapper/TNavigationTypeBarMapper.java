@@ -1,6 +1,9 @@
 package org.learn.mapper;
 
+import org.learn.domain.TNavigationBar;
 import org.learn.domain.TNavigationTypeBar;
+import org.learn.domain.dto.NavigationListDto;
+import org.learn.domain.vo.TNavigationBarQueryListVo;
 
 import java.util.List;
 
@@ -53,4 +56,12 @@ public interface TNavigationTypeBarMapper
      * @return 结果
      */
     public int deleteTNavigationTypeBarByIds(Long[] ids);
+
+    /**
+     * 选择所有列表
+     *
+     * @param dto dto
+     * @return {@link List}<{@link TNavigationBar}>
+     */
+    List<TNavigationBarQueryListVo> selectAllList(NavigationListDto dto);
 }

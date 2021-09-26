@@ -3,22 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.learn.mapper.TNavigationTypeBarMapper">
-
     <resultMap type="TNavigationTypeBar" id="TNavigationTypeBarResult">
-        <result property="id"    column="id"    />
-        <result property="name"    column="name"    />
-        <result property="code"    column="code"    />
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="code" column="code"/>
     </resultMap>
 
     <sql id="selectTNavigationTypeBarVo">
-        select id, name, code from t_navigation_type_bar
+        select id, name, code
+        from t_navigation_type_bar
     </sql>
 
     <select id="selectTNavigationTypeBarList" parameterType="TNavigationTypeBar" resultMap="TNavigationTypeBarResult">
         <include refid="selectTNavigationTypeBarVo"/>
         <where>
-            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
-            <if test="code != null  and code != ''"> and code = #{code}</if>
+            <if test="name != null  and name != ''">
+                and name like concat('%', #{name}, '%')
+            </if>
+            <if test="code != null  and code != ''">
+                and code = #{code}
+            </if>
         </where>
     </select>
 
@@ -30,26 +34,40 @@
     <insert id="insertTNavigationTypeBar" parameterType="TNavigationTypeBar" useGeneratedKeys="true" keyProperty="id">
         insert into t_navigation_type_bar
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="name != null">name,</if>
-            <if test="code != null">code,</if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="code != null">
+                code,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="name != null">#{name},</if>
-            <if test="code != null">#{code},</if>
+            <if test="name != null">
+                #{name},
+            </if>
+            <if test="code != null">
+                #{code},
+            </if>
         </trim>
     </insert>
 
     <update id="updateTNavigationTypeBar" parameterType="TNavigationTypeBar">
         update t_navigation_type_bar
         <trim prefix="SET" suffixOverrides=",">
-            <if test="name != null">name = #{name},</if>
-            <if test="code != null">code = #{code},</if>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="code != null">
+                code = #{code},
+            </if>
         </trim>
         where id = #{id}
     </update>
 
     <delete id="deleteTNavigationTypeBarById" parameterType="Long">
-        delete from t_navigation_type_bar where id = #{id}
+        delete
+        from t_navigation_type_bar
+        where id = #{id}
     </delete>
 
     <delete id="deleteTNavigationTypeBarByIds" parameterType="String">
@@ -58,4 +76,27 @@
             #{id}
         </foreach>
     </delete>
+
+    <select id="selectAllList" resultType="org.learn.domain.vo.TNavigationBarQueryListVo">
+        select
+            a.id,
+            a.name,
+            a.url,
+            a.createDate,
+            tntb.name as 'typeName'
+        from t_navigation_bar a
+                     join t_navigation_type_bar tntb on a.typeId = tntb.id
+        <where>
+            <if test="name!=null and name!=''">
+                and a.name like concat('%',#{name},'%')
+            </if>
+            <if test="typeId!=null">
+                and tntb.id=#{typeId}
+            </if>
+        </where>
+        order by a.id desc
+        <if test="currentPage!=null and pageSize!=null">
+            limit #{startPage},#{pageSize}
+        </if>
+    </select>
 </mapper>
