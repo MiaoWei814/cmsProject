@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.learn.mapper.FeedbacksMapper">
+
+    <resultMap type="Feedbacks" id="FeedbacksResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="path"    column="path"    />
+        <result property="createDate"    column="createDate"    />
+        <result property="enable"    column="enable"    />
+    </resultMap>
+
+    <sql id="selectFeedbacksVo">
+        select id, name, path, createDate, enable from feedbacks
+    </sql>
+
+    <select id="selectFeedbacksList" parameterType="Feedbacks" resultMap="FeedbacksResult">
+        <include refid="selectFeedbacksVo"/>
+        <where>
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="path != null  and path != ''"> and path = #{path}</if>
+            <if test="createDate != null "> and createDate = #{createDate}</if>
+            <if test="enable != null "> and enable = #{enable}</if>
+        </where>
+    </select>
+
+    <select id="selectFeedbacksById" parameterType="Long" resultMap="FeedbacksResult">
+        <include refid="selectFeedbacksVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertFeedbacks" parameterType="Feedbacks" useGeneratedKeys="true" keyProperty="id">
+        insert into feedbacks
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">name,</if>
+            <if test="path != null">path,</if>
+            <if test="createDate != null">createDate,</if>
+            <if test="enable != null">enable,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">#{name},</if>
+            <if test="path != null">#{path},</if>
+            <if test="createDate != null">#{createDate},</if>
+            <if test="enable != null">#{enable},</if>
+        </trim>
+    </insert>
+
+    <update id="updateFeedbacks" parameterType="Feedbacks">
+        update feedbacks
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="path != null">path = #{path},</if>
+            <if test="createDate != null">createDate = #{createDate},</if>
+            <if test="enable != null">enable = #{enable},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteFeedbacksById" parameterType="Long">
+        delete from feedbacks where id = #{id}
+    </delete>
+
+    <delete id="deleteFeedbacksByIds" parameterType="String">
+        delete from feedbacks where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="queryPage" resultType="org.learn.domain.vo.FeedbacksQueryListVo">
+        select
+            id, name, path, createDate, enable
+        from
+                feedbacks
+        <where>
+            <if test="name!=null and name!=''">
+                and name like concat('%',#{name},'%')
+            </if>
+            <if test="enable!=null">
+                and enable=#{enable}
+            </if>
+        </where>
+        order by id desc
+        <if test="currentPage!=null and pageSize!=null">
+            limit #{startPage},#{pageSize}
+        </if>
+    </select>
+</mapper>

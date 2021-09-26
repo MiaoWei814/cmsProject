@@ -2,10 +2,7 @@ package org.learn.controller;
 
 import org.learn.domain.Slide;
 import org.learn.domain.vo.ArticleSortsVo;
-import org.learn.service.IArticleService;
-import org.learn.service.IFaqService;
-import org.learn.service.ISlideService;
-import org.learn.service.ITNavigationBarService;
+import org.learn.service.*;
 import org.learn.util.AjaxResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +29,8 @@ public class IndexController {
     private ITNavigationBarService NavigationBarService;
     @Autowired
     private IFaqService faqService;
-
+    @Autowired
+    private IFeedbacksService feedbacksService;
     /**
      * 找到所有轮播图
      *
@@ -83,6 +81,12 @@ public class IndexController {
     @ResponseBody
     public AjaxResult commonProblem(){
         return faqService.indexQueryList();
+    }
+
+    @RequestMapping("/feedbacks")
+    @ResponseBody
+    public AjaxResult feedbacks(){
+        return feedbacksService.indexQueryList();
     }
 
 

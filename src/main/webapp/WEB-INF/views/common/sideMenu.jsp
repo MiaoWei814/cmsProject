@@ -41,5 +41,17 @@
                 <span class="app-menu__label">常见问题管理</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item" href="${pageContext.request.contextPath}/system/feedbacks/index">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">好评如潮管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="app-menu__item" href="${pageContext.request.contextPath}/system/feedbacks/index">
+                <i class="app-menu__icon fa fa-dashboard"></i>
+                <span class="app-menu__label">好评如潮管理</span>
+            </a>
+        </li>
     </ul>
 </aside>
