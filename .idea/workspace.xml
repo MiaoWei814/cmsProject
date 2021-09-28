@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="frame:war exploded" />
+      <artifact name="oneProject:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ede413-4050-4149-ad7f-4ddd4e7a3713" name="Changes" comment="" />
+    <list default="true" id="30ede413-4050-4149-ad7f-4ddd4e7a3713" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/learn/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/learn/domain/Article.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,13 +26,21 @@
         <option value="spring-beans.schema" />
         <option value="JSP" />
         <option value="HTML File" />
+        <option value="Interface" />
+        <option value="JavaScript File" />
         <option value="Jsp File" />
         <option value="mybatis-SQL-Mapper" />
-        <option value="Interface" />
         <option value="Class" />
-        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="MiaoWei814 &lt;72567951+miaowei814@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -68,26 +78,28 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="MyBatisLogPluginindexNum" value="1728" />
+    <property name="MyBatisLogPluginindexNum" value="1736" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/home/other" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.26373628" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="service.view.auto.scroll.to.source" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\源码时代\frame\src\main\webapp\home" />
-      <recent name="F:\源码时代\frame\src\main\webapp\WEB-INF\views\user" />
-      <recent name="F:\源码时代\frame\src\main\webapp" />
-      <recent name="F:\源码时代\frame\src\main\webapp\WEB-INF\views\side" />
-      <recent name="F:\源码时代\frame\src\main\webapp\static" />
+      <recent name="F:\源码时代\oneProject\src\main\webapp\home\other" />
+      <recent name="F:\源码时代\oneProject\src\main\webapp\WEB-INF\views\feedbacks" />
+      <recent name="F:\源码时代\oneProject\src\main\webapp\WEB-INF\views\problem" />
+      <recent name="F:\源码时代\oneProject\src\main\webapp\static\home\css" />
+      <recent name="F:\源码时代\oneProject\src\main\webapp\upload" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\源码时代\frame\src\main\webapp\static\home\js\test" />
@@ -96,6 +108,10 @@
     </key>
     <key name="IntroduceConstantDialog.RECENTS_KEY">
       <recent name="org.learn.service.impl.ArticleImpl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.learn.domain.vo" />
+      <recent name="org.learn.domain.dto" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.383">
@@ -147,10 +163,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/oneProject/src/main/webapp/home/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0.383" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.383" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="frame:war exploded">
+        <artifact name="oneProject:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -265,10 +284,12 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="frame:war exploded" />
+          <artifact name="oneProject:war exploded" />
         </option>
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JUnit.ArticleImpl.test" />
       <item itemvalue="JUnit.FreeMarkerUtil.test" />
       <item itemvalue="JUnit.ArticleController.test" />
@@ -276,6 +297,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="JUnit.ArticleController.test" />
         <item itemvalue="JUnit.FreeMarkerUtil.test" />
         <item itemvalue="JUnit.ArticleImpl.test" />
@@ -314,11 +336,74 @@
       <workItem from="1632356421248" duration="23717000" />
       <workItem from="1632443558181" duration="24558000" />
       <workItem from="1632530116017" duration="492000" />
+      <workItem from="1632551096248" duration="11271000" />
+      <workItem from="1632615807707" duration="28748000" />
+      <workItem from="1632706958434" duration="1465000" />
     </task>
+    <task id="LOCAL-00001" summary="提交">
+      <created>1632551305621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1632551305621</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加easyPoi上传实例">
+      <created>1632574887800</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1632574887800</updated>
+    </task>
+    <task id="LOCAL-00003" summary="文件导入">
+      <created>1632576634185</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632576634185</updated>
+    </task>
+    <task id="LOCAL-00004" summary="导航栏上传">
+      <created>1632632632430</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1632632632430</updated>
+    </task>
+    <task id="LOCAL-00005" summary="常见问题上传">
+      <created>1632638241042</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1632638241042</updated>
+    </task>
+    <task id="LOCAL-00006" summary="好评如潮上传">
+      <created>1632643637495</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1632643637495</updated>
+    </task>
+    <task id="LOCAL-00007" summary="上传">
+      <created>1632649127269</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632649127269</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="提交" />
+    <MESSAGE value="添加easyPoi上传实例" />
+    <MESSAGE value="文件导入" />
+    <MESSAGE value="导航栏上传" />
+    <MESSAGE value="常见问题上传" />
+    <MESSAGE value="好评如潮上传" />
+    <MESSAGE value="上传" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

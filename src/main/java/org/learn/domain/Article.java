@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.learn.util.BasePage;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 文章
