@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ede413-4050-4149-ad7f-4ddd4e7a3713" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/learn/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/learn/domain/Article.java" afterDir="false" />
-    </list>
+    <list default="true" id="30ede413-4050-4149-ad7f-4ddd4e7a3713" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,8 +81,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/home/other" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hello" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.26373628" />
     <property name="service.view.auto.scroll.to.source" value="true" />
@@ -95,11 +93,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\源码时代\oneProject" />
       <recent name="F:\源码时代\oneProject\src\main\webapp\home\other" />
       <recent name="F:\源码时代\oneProject\src\main\webapp\WEB-INF\views\feedbacks" />
       <recent name="F:\源码时代\oneProject\src\main\webapp\WEB-INF\views\problem" />
       <recent name="F:\源码时代\oneProject\src\main\webapp\static\home\css" />
-      <recent name="F:\源码时代\oneProject\src\main\webapp\upload" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\源码时代\frame\src\main\webapp\static\home\js\test" />
@@ -339,6 +337,10 @@
       <workItem from="1632551096248" duration="11271000" />
       <workItem from="1632615807707" duration="28748000" />
       <workItem from="1632706958434" duration="1465000" />
+      <workItem from="1632877313712" duration="504000" />
+      <workItem from="1632878848305" duration="207000" />
+      <workItem from="1632884443207" duration="120000" />
+      <workItem from="1633069726283" duration="1950000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <created>1632551305621</created>
@@ -389,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632649127269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="上传SQL">
+      <created>1632878986092</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1632878986092</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +412,8 @@
     <MESSAGE value="常见问题上传" />
     <MESSAGE value="好评如潮上传" />
     <MESSAGE value="上传" />
-    <option name="LAST_COMMIT_MESSAGE" value="上传" />
+    <MESSAGE value="上传SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="上传SQL" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
